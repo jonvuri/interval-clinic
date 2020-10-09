@@ -1,0 +1,65 @@
+---
+parser: '@typescript-eslint/parser'
+
+parserOptions:
+  project: tsconfig.json
+
+settings:
+  react:
+    pragma: React
+    version: detect
+
+env:
+  browser: true
+  commonjs: true
+  es6: true
+  jest: true
+  node: true
+
+plugins:
+  - '@typescript-eslint'
+  - react
+  - react-hooks
+  - jsx-a11y
+  - prefer-arrow
+  - css-modules
+  - prettier
+
+extends:
+  - eslint:recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:react/recommended
+  - plugin:jsx-a11y/recommended
+  - plugin:css-modules/recommended
+  - prettier/react
+  - prettier/@typescript-eslint
+
+rules:
+  prettier/prettier: error
+
+  # we use Typescript instead
+  react/prop-types:
+    - off
+
+  # explicit typing is usually a good idea, but occasionally we actually want to
+  # leave off the return type so that we can infer function return types using
+  # ReturnType to avoid redundant typing
+  '@typescript-eslint/explicit-function-return-type':
+    - off
+
+  # interface being preferred over type is outdated and no longer a best practice
+  # - almost the opposite, in fact https://github.com/palantir/tslint/issues/3248
+  '@typescript-eslint/prefer-interface':
+    - off
+
+  # this one doesn't play nice with react-app-env, didn't spend long enough to figure
+  # out the proper fix / upgrade
+  '@typescript-eslint/triple-slash-reference':
+    - off
+
+  # See https://reactjs.org/docs/hooks-rules.html
+  'react-hooks/rules-of-hooks': error
+  'react-hooks/exhaustive-deps': error
+
+  # Always use arrow functions for simplicity and safety
+  'prefer-arrow/prefer-arrow-functions': error
