@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+}
+
+.whiteKey {
+  width: 60px;
+  height: 240px;
+  margin: 2px;
+  fill: white;
+}
+
+.blackKey {
+  width: 60px;
+  height: 180px;
+  margin: 2px;
+  fill: #666;
+}
