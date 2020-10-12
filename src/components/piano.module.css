@@ -2,16 +2,122 @@
   display: flex;
 }
 
+.keyContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.keyLabel {
+  opacity: 0.7;
+}
+
+.keyPressed.whiteKey,
+.keyPressed.blackKey {
+  mix-blend-mode: initial;
+  transition-duration: 5ms;
+  transform: scale(0.98);
+}
+
+.keyPressed.blackKey {
+  opacity: 0.75;
+}
+
 .whiteKey {
+  position: relative;
   width: 60px;
   height: 240px;
   margin: 2px;
-  fill: white;
+  isolation: isolate;
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
 }
 
 .blackKey {
+  position: relative;
   width: 60px;
   height: 180px;
   margin: 2px;
-  fill: #666;
+  mix-blend-mode: overlay;
+  isolation: isolate;
+  transform: scale(1);
+  transition-property: transform;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+}
+
+.keyComponentRed {
+  position: absolute;
+  left: 0;
+  transform: translate(0px, 0px);
+  transition-property: transform;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+}
+
+.keyPressed > .keyComponentRed {
+  transition-duration: 5ms;
+  transform: translate(-1px, -1px);
+}
+
+.whiteKey > .keyComponentRed {
+  fill: rgb(255, 0, 0);
+  mix-blend-mode: screen;
+}
+
+.blackKey > .keyComponentRed {
+  fill: rgb(255, 0, 255);
+  mix-blend-mode: multiply;
+  isolation: isolate;
+}
+
+.keyComponentGreen {
+  position: absolute;
+  left: 0;
+  transform: translate(0px, 0px);
+  transition-property: transform;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+}
+
+.whiteKey > .keyComponentGreen {
+  fill: rgb(0, 255, 0);
+  mix-blend-mode: screen;
+}
+
+.blackKey > .keyComponentGreen {
+  fill: rgb(255, 255, 0);
+  mix-blend-mode: multiply;
+  isolation: isolate;
+}
+
+.keyPressed > .keyComponentGreen {
+  transition-duration: 5ms;
+  transform: translate(0px, 1px);
+}
+
+.keyComponentBlue {
+  position: absolute;
+  left: 0;
+  transform: translate(0px, 0px);
+  transition-property: transform;
+  transition-duration: 100ms;
+  transition-timing-function: ease-in-out;
+}
+
+.whiteKey > .keyComponentBlue {
+  fill: rgb(0, 0, 255);
+  mix-blend-mode: screen;
+}
+
+.blackKey > .keyComponentBlue {
+  fill: rgb(0, 255, 255);
+  mix-blend-mode: multiply;
+  isolation: isolate;
+}
+
+.keyPressed > .keyComponentBlue {
+  transition-duration: 5ms;
+  transform: translate(1px, -1px);
 }

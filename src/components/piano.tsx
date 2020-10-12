@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import {} from 'tone'
 
 import styles from './piano.module.css'
@@ -23,16 +23,39 @@ const BaseKey = ({
   onAttack,
   onRelease,
 }: BaseKeyProps) => {
-  const svgPatternId = `${cssClassName}-circles`
+  const [pressed, setPressed] = useState(false)
+
+  const svgPatternIdRed = `${cssClassName}-circles-red`
+  const svgPatternIdGreen = `${cssClassName}-circles-green`
+  const svgPatternIdBlue = `${cssClassName}-circles-blue`
+
+  const handleMouseDown = useCallback(
+    (event) => {
+      event.preventDefault()
+      onAttack(note)
+      setPressed(true)
+    },
+    [note, onAttack, setPressed]
+  )
+
+  const handleMouseUp = useCallback(
+    (event) => {
+      event.preventDefault()
+      onRelease(note)
+      setPressed(false)
+    },
+    [note, onRelease, setPressed]
+  )
 
   const handleKeyDown = useCallback(
     (event) => {
       if (event.key === keyboardKey && !event.repeat) {
         event.preventDefault()
         onAttack(note)
+        setPressed(true)
       }
     },
-    [note, keyboardKey, onAttack]
+    [note, keyboardKey, onAttack, setPressed]
   )
 
   const handleKeyUp = useCallback(
@@ -40,9 +63,10 @@ const BaseKey = ({
       if (event.key === keyboardKey && !event.repeat) {
         event.preventDefault()
         onRelease(note)
+        setPressed(false)
       }
     },
-    [note, keyboardKey, onRelease]
+    [note, keyboardKey, onRelease, setPressed]
   )
 
   useEffect(() => {
@@ -56,36 +80,77 @@ const BaseKey = ({
   })
 
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      onMouseDown={() => {
-        onAttack(note)
-      }}
-      onMouseUp={() => onRelease(note)}
-      className={cssClassName}
-    >
-      {display}
-      <svg width="100%" height="100%">
-        <pattern
-          id={svgPatternId}
-          x="0"
-          y="0"
-          width="10"
-          height="10"
-          patternUnits="userSpaceOnUse"
-        >
-          <circle fill="inherit" cx="3" cy="3" r="3"></circle>
-        </pattern>
+    <div className={styles.keyContainer}>
+      <div className={styles.keyLabel}>{display}</div>
+      <div
+        role="button"
+        tabIndex={0}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        className={`${cssClassName}${pressed ? ` ${styles.keyPressed}` : ''}`}
+      >
+        <svg width="100%" height="100%" className={styles.keyComponentGreen}>
+          <pattern
+            id={svgPatternIdGreen}
+            x="0"
+            y="0"
+            width="10"
+            height="10"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle fill="inherit" cx="5" cy="5" r="3"></circle>
+          </pattern>
 
-        <rect
-          x="0"
-          y="0"
-          width="100%"
-          height="100%"
-          fill={`url(#${svgPatternId})`}
-        ></rect>
-      </svg>
+          <rect
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            fill={`url(#${svgPatternIdGreen})`}
+          ></rect>
+        </svg>
+        <svg width="100%" height="100%" className={styles.keyComponentRed}>
+          <pattern
+            id={svgPatternIdRed}
+            x="0"
+            y="0"
+            width="10"
+            height="10"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle fill="inherit" cx="5" cy="5" r="3"></circle>
+          </pattern>
+
+          <rect
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            fill={`url(#${svgPatternIdRed})`}
+          ></rect>
+        </svg>
+
+        <svg width="100%" height="100%" className={styles.keyComponentBlue}>
+          <pattern
+            id={svgPatternIdBlue}
+            x="0"
+            y="0"
+            width="10"
+            height="10"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle fill="inherit" cx="5" cy="5" r="3"></circle>
+          </pattern>
+
+          <rect
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            fill={`url(#${svgPatternIdBlue})`}
+          ></rect>
+        </svg>
+      </div>
     </div>
   )
 }
