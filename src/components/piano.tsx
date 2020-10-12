@@ -1,14 +1,15 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import {} from 'tone'
+
+import { Interval } from '../intervals'
 
 import styles from './piano.module.css'
 
 type KeyProps = {
-  note: string
+  interval: Interval
   display: string
   keyboardKey: string
-  onAttack: (note: string) => void
-  onRelease: (note: string) => void
+  onAttack: (interval: Interval) => void
+  onRelease: (interval: Interval) => void
 }
 
 type BaseKeyProps = KeyProps & {
@@ -17,7 +18,7 @@ type BaseKeyProps = KeyProps & {
 
 const BaseKey = ({
   cssClassName,
-  note,
+  interval,
   display,
   keyboardKey,
   onAttack,
@@ -33,45 +34,45 @@ const BaseKey = ({
     (event) => {
       // Left click button
       if (event.buttons === 1) {
-        onAttack(note)
+        onAttack(interval)
         setPressed(true)
       }
     },
-    [note, onAttack, setPressed]
+    [interval, onAttack, setPressed]
   )
 
   const handleMouseDown = useCallback(
     (event) => {
       event.preventDefault()
-      onAttack(note)
+      onAttack(interval)
       setPressed(true)
     },
-    [note, onAttack, setPressed]
+    [interval, onAttack, setPressed]
   )
 
   const handleMouseUp = useCallback(() => {
-    onRelease(note)
+    onRelease(interval)
     setPressed(false)
-  }, [note, onRelease, setPressed])
+  }, [interval, onRelease, setPressed])
 
   const handleKeyDown = useCallback(
     (event) => {
       if (event.key === keyboardKey && !event.repeat) {
-        onAttack(note)
+        onAttack(interval)
         setPressed(true)
       }
     },
-    [note, keyboardKey, onAttack, setPressed]
+    [interval, keyboardKey, onAttack, setPressed]
   )
 
   const handleKeyUp = useCallback(
     (event) => {
       if (event.key === keyboardKey && !event.repeat) {
-        onRelease(note)
+        onRelease(interval)
         setPressed(false)
       }
     },
-    [note, keyboardKey, onRelease, setPressed]
+    [interval, keyboardKey, onRelease, setPressed]
   )
 
   useEffect(() => {
@@ -163,7 +164,7 @@ const BaseKey = ({
 }
 
 const WhiteKey = ({
-  note,
+  interval,
   display,
   keyboardKey,
   onAttack,
@@ -171,7 +172,7 @@ const WhiteKey = ({
 }: KeyProps) => (
   <BaseKey
     cssClassName={styles.whiteKey}
-    note={note}
+    interval={interval}
     keyboardKey={keyboardKey}
     display={display}
     onAttack={onAttack}
@@ -180,7 +181,7 @@ const WhiteKey = ({
 )
 
 const BlackKey = ({
-  note,
+  interval,
   display,
   keyboardKey,
   onAttack,
@@ -188,7 +189,7 @@ const BlackKey = ({
 }: KeyProps) => (
   <BaseKey
     cssClassName={styles.blackKey}
-    note={note}
+    interval={interval}
     keyboardKey={keyboardKey}
     display={display}
     onAttack={onAttack}
@@ -197,99 +198,99 @@ const BlackKey = ({
 )
 
 type Props = {
-  onAttack: (tone: string) => void
-  onRelease: (tone: string) => void
+  onAttack: (interval: Interval) => void
+  onRelease: (interval: Interval) => void
 }
 
 const Piano = ({ onAttack, onRelease }: Props) => {
   return (
     <div className={styles.container}>
       <WhiteKey
-        note="C4"
+        interval="U"
         display="C"
         keyboardKey="q"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <BlackKey
-        note="C#4"
+        interval="m2"
         display="D♭"
         keyboardKey="2"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
-        note="D4"
+        interval="M2"
         display="D"
         keyboardKey="w"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <BlackKey
-        note="D#4"
+        interval="m3"
         display="E♭"
         keyboardKey="3"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
-        note="E4"
+        interval="M3"
         display="E"
         keyboardKey="e"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
-        note="F4"
+        interval="P4"
         display="F"
         keyboardKey="r"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <BlackKey
-        note="F#4"
+        interval="A4"
         display="G♭"
         keyboardKey="5"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
-        note="G4"
+        interval="P5"
         display="G"
         keyboardKey="t"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <BlackKey
-        note="G#4"
+        interval="m6"
         display="A♭"
         keyboardKey="6"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
-        note="A4"
+        interval="M6"
         display="A"
         keyboardKey="y"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <BlackKey
-        note="A#4"
+        interval="m7"
         display="B♭"
         keyboardKey="7"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
-        note="B4"
+        interval="M7"
         display="B"
         keyboardKey="u"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
-        note="C5"
+        interval="O"
         display="C🠕"
         keyboardKey="i"
         onAttack={onAttack}

@@ -1,44 +1,29 @@
 import React, { useState } from 'react'
-import * as Tone from 'tone'
 
 import styles from './App.module.css'
 
 import Piano from './components/piano'
 
-const synth = new Tone.PolySynth().toDestination()
-
-synth.set({
-  envelope: {
-    attack: 0.05,
-    attackCurve: 'linear',
-    decay: 0.3,
-    decayCurve: 'exponential',
-    release: 0.8,
-    releaseCurve: 'exponential',
-    sustain: 0.4,
-  },
-  oscillator: {
-    type: 'triangle',
-  },
-})
+import intervals, { Interval } from './intervals'
+import synth, { startSynth } from './synth'
 
 const App = () => {
-  const [endTone, setEndTone] = useState<string | null>(null)
+  const [interval, setInterval] = useState<Interval | null>(null)
 
-  const handleAttack = async (tone: string) => {
-    await Tone.start()
+  const handleAttack = async (interval: Interval) => {
+    await startSynth()
 
-    synth.triggerAttack(tone)
-    setEndTone(tone)
+    synth.triggerAttack(intervals[interval].frequency)
+    setInterval(interval)
   }
 
-  const handleRelease = (tone: string) => {
-    synth.triggerRelease(tone)
+  const handleRelease = (interval: Interval) => {
+    synth.triggerRelease(intervals[interval].frequency)
   }
 
   return (
     <div className={styles.app}>
-      End tone: {endTone}
+      Interval: {interval}
       <Piano onAttack={handleAttack} onRelease={handleRelease} />
     </div>
   )

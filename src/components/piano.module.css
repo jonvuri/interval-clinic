@@ -58,7 +58,7 @@
 
 .keyPressed > .keyComponentRed {
   transition-duration: 5ms;
-  transform: translate(-1px, -1px);
+  transform: translate(-0.75px, -0.75px);
 }
 
 .whiteKey > .keyComponentRed {
@@ -94,7 +94,7 @@
 
 .keyPressed > .keyComponentGreen {
   transition-duration: 5ms;
-  transform: translate(0px, 1px);
+  transform: translate(0px, 0.75px);
 }
 
 .keyComponentBlue {
@@ -119,5 +119,5 @@
 
 .keyPressed > .keyComponentBlue {
   transition-duration: 5ms;
-  transform: translate(1px, -1px);
+  transform: translate(0.75px, -0.75px);
 }
