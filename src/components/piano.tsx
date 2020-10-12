@@ -29,6 +29,17 @@ const BaseKey = ({
   const svgPatternIdGreen = `${cssClassName}-circles-green`
   const svgPatternIdBlue = `${cssClassName}-circles-blue`
 
+  const handleMouseEnter = useCallback(
+    (event) => {
+      // Left click button
+      if (event.buttons === 1) {
+        onAttack(note)
+        setPressed(true)
+      }
+    },
+    [note, onAttack, setPressed]
+  )
+
   const handleMouseDown = useCallback(
     (event) => {
       event.preventDefault()
@@ -38,19 +49,14 @@ const BaseKey = ({
     [note, onAttack, setPressed]
   )
 
-  const handleMouseUp = useCallback(
-    (event) => {
-      event.preventDefault()
-      onRelease(note)
-      setPressed(false)
-    },
-    [note, onRelease, setPressed]
-  )
+  const handleMouseUp = useCallback(() => {
+    onRelease(note)
+    setPressed(false)
+  }, [note, onRelease, setPressed])
 
   const handleKeyDown = useCallback(
     (event) => {
       if (event.key === keyboardKey && !event.repeat) {
-        event.preventDefault()
         onAttack(note)
         setPressed(true)
       }
@@ -61,7 +67,6 @@ const BaseKey = ({
   const handleKeyUp = useCallback(
     (event) => {
       if (event.key === keyboardKey && !event.repeat) {
-        event.preventDefault()
         onRelease(note)
         setPressed(false)
       }
@@ -85,8 +90,10 @@ const BaseKey = ({
       <div
         role="button"
         tabIndex={0}
+        onMouseEnter={handleMouseEnter}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
         className={`${cssClassName}${pressed ? ` ${styles.keyPressed}` : ''}`}
       >
         <svg width="100%" height="100%" className={styles.keyComponentGreen}>
