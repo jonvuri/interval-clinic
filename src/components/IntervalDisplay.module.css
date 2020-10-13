@@ -2,9 +2,22 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-top: 12px;
 }
 
 .lengthLine {
   width: 832px;
-  height: 12px;
+  height: 16px;
+}
+
+.semitonesLabel {
+  margin-left: 26px;
+  margin-top: 10px;
+  font-size: 80%;
+}
+
+.intervalNameLabel {
+  margin-left: 26px;
+  margin-top: 8px;
+  font-size: 200%;
 }

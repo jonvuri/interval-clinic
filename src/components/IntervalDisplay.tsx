@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Interval } from '../intervals'
+import intervals, { Interval } from '../intervals'
 
 import styles from './IntervalDisplay.module.css'
 
@@ -40,26 +40,36 @@ const numberOfSemitones = (interval: Interval | null): number => {
   }
 }
 
-const IntervalDisplay = ({ interval }: Props) => (
-  <div className={styles.container}>
-    <svg className={styles.lengthLine}>
-      <circle cx="32" cy="6" r="6" />
-      {Array.from(Array(numberOfSemitones(interval)), (_, i) => (
-        <React.Fragment key={i}>
-          <line
-            x1={String(32 + 64 * i)}
-            y1="6"
-            x2={String(96 + 64 * i)}
-            y2="6"
-            stroke="black"
-            strokeWidth="4"
-          />
-          <circle cx={String(96 + 64 * i)} cy="6" r="6" />
-        </React.Fragment>
-      ))}
-    </svg>
-    {interval}
-  </div>
-)
+const IntervalDisplay = ({ interval }: Props) =>
+  interval ? (
+    <div
+      className={styles.container}
+      style={{
+        color: intervals[interval].color,
+        fill: intervals[interval].color,
+        stroke: intervals[interval].color,
+      }}
+    >
+      <svg className={styles.lengthLine}>
+        <circle cx="32" cy="8" r="6" />
+        {Array.from(Array(numberOfSemitones(interval)), (_, i) => (
+          <React.Fragment key={i}>
+            <line
+              x1={String(32 + 64 * i)}
+              y1="8"
+              x2={String(96 + 64 * i)}
+              y2="8"
+              strokeWidth="4"
+            />
+            <circle cx={String(96 + 64 * i)} cy="8" r="6" />
+          </React.Fragment>
+        ))}
+      </svg>
+      <div className={styles.semitonesLabel}>
+        {numberOfSemitones(interval)} semitones
+      </div>
+      <div className={styles.intervalNameLabel}>{intervals[interval].name}</div>
+    </div>
+  ) : null
 
 export default IntervalDisplay
