@@ -1,22 +1,24 @@
 import * as Tone from 'tone'
 
-const synth = new Tone.PolySynth().toDestination()
+export const getSynth = async () => {
+  await Tone.start()
 
-synth.set({
-  envelope: {
-    attack: 0.05,
-    attackCurve: 'linear',
-    decay: 0.3,
-    decayCurve: 'exponential',
-    release: 0.8,
-    releaseCurve: 'exponential',
-    sustain: 0.4,
-  },
-  oscillator: {
-    type: 'triangle',
-  },
-})
+  const synth = new Tone.PolySynth().toDestination()
 
-export const startSynth = () => Tone.start()
+  synth.set({
+    envelope: {
+      attack: 0.05,
+      attackCurve: 'linear',
+      decay: 0.3,
+      decayCurve: 'exponential',
+      release: 0.8,
+      releaseCurve: 'exponential',
+      sustain: 0.4,
+    },
+    oscillator: {
+      type: 'triangle',
+    },
+  })
 
-export default synth
+  return synth
+}
