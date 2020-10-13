@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.lengthLine {
+  width: 832px;
+  height: 12px;
+}
