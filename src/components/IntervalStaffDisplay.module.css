@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  width: 410px;
+  height: 270px;
+}
+
+.staffBase {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 410px;
+  height: 270px;
+  stroke: #999;
+  fill: #999;
+}
+
+.intervalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 410px;
+  height: 270px;
+}

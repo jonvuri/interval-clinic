@@ -40,7 +40,7 @@ const numberOfSemitones = (interval: Interval | null): number => {
   }
 }
 
-const IntervalDisplay = ({ interval }: Props) =>
+const IntervalLineDisplay = ({ interval }: Props) =>
   interval ? (
     <div
       className={styles.container}
@@ -72,4 +72,4 @@ const IntervalDisplay = ({ interval }: Props) =>
     </div>
   ) : null
 
-export default IntervalDisplay
+export default IntervalLineDisplay

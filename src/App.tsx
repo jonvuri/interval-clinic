@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 
 import styles from './App.module.css'
 
-import IntervalDisplay from './components/IntervalLineDisplay'
+import IntervalLineDisplay from './components/IntervalLineDisplay'
+import IntervalStaffDisplay from './components/IntervalStaffDisplay'
 import Piano from './components/Piano'
 
 import intervals, { Interval } from './intervals'
@@ -28,7 +29,8 @@ const App = () => {
     <div className={styles.app}>
       Interval: {interval}
       <Piano onAttack={handleAttack} onRelease={handleRelease} />
-      <IntervalDisplay interval={interval} />
+      <IntervalLineDisplay interval={interval} />
+      <IntervalStaffDisplay interval={interval} />
     </div>
   )
 }
