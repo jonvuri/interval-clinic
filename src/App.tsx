@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 import styles from './App.module.css'
 
-import IntervalDisplay from './components/IntervalDisplay'
-import Piano from './components/piano'
+import IntervalDisplay from './components/IntervalLineDisplay'
+import Piano from './components/Piano'
 
 import intervals, { Interval } from './intervals'
 import { getSynth } from './synth'

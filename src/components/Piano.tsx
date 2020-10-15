@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 import { Interval } from '../intervals'
 
-import styles from './piano.module.css'
+import styles from './Piano.module.css'
 
 type KeyProps = {
   interval: Interval

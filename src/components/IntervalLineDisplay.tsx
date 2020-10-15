@@ -2,7 +2,7 @@ import React from 'react'
 
 import intervals, { Interval } from '../intervals'
 
-import styles from './IntervalDisplay.module.css'
+import styles from './IntervalLineDisplay.module.css'
 
 type Props = {
   interval: Interval | null
