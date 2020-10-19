@@ -1,0 +1,20 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 50px;
+  overflow-x: hidden;
+}
+
+.backgroundContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: black;
+}
+
+.foregroundContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: none;
+}

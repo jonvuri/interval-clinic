@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import styles from './App.module.css'
 
 import IntervalLineDisplay from './components/IntervalLineDisplay'
+import IntervalSineWaveDisplay from './components/IntervalSineWaveDisplay'
 import IntervalStaffDisplay from './components/IntervalStaffDisplay'
 import Piano from './components/Piano'
 
@@ -27,6 +28,7 @@ const App = () => {
 
   return (
     <div className={styles.app}>
+      <IntervalSineWaveDisplay interval={interval} />
       Interval: {interval}
       <Piano onAttack={handleAttack} onRelease={handleRelease} />
       <IntervalLineDisplay interval={interval} />
