@@ -1,7 +1,6 @@
 .container {
   position: relative;
-  width: 100vw;
-  height: 50px;
+  height: 70px;
   overflow-x: hidden;
 }
 
@@ -9,6 +8,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  height: 50px;
   fill: black;
 }
 
@@ -16,5 +16,18 @@
   position: absolute;
   top: 0;
   left: 0;
+  height: 50px;
   fill: none;
+}
+
+.tonicInfoLabel {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: 20px;
+  color: black;
+}
+
+.intervalInfoLabel {
+  margin-left: 60px;
 }
