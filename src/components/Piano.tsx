@@ -159,6 +159,7 @@ const BaseKey = ({
           ></rect>
         </svg>
       </div>
+      <div className={styles.keyboardLabel}>{keyboardKey}</div>
     </div>
   )
 }

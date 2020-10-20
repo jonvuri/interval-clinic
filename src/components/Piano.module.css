@@ -8,7 +8,22 @@
 }
 
 .keyLabel {
-  opacity: 0.7;
+  opacity: 0.4;
+  text-align: center;
+}
+
+.keyboardLabel {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 4px;
+  opacity: 0.4;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  border-radius: 2px;
 }
 
 .keyPressed.whiteKey,
