@@ -208,7 +208,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
     <div className={styles.container}>
       <WhiteKey
         interval="U"
-        display="C"
+        display="C4"
         keyboardKey="q"
         onAttack={onAttack}
         onRelease={onRelease}
@@ -292,7 +292,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <WhiteKey
         interval="O"
-        display="C🠕"
+        display="C5"
         keyboardKey="i"
         onAttack={onAttack}
         onRelease={onRelease}
