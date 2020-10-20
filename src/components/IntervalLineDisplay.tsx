@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
-import intervals, { Interval } from '../intervals'
+import { Interval, IntervalContext } from '../intervals'
 
 import styles from './IntervalLineDisplay.module.css'
 
@@ -40,8 +40,10 @@ const numberOfSemitones = (interval: Interval | null): number => {
   }
 }
 
-const IntervalLineDisplay = ({ interval }: Props) =>
-  interval ? (
+const IntervalLineDisplay = ({ interval }: Props) => {
+  const intervals = useContext(IntervalContext)
+
+  return interval ? (
     <div
       className={styles.container}
       style={{
@@ -75,5 +77,6 @@ const IntervalLineDisplay = ({ interval }: Props) =>
       Play a note to discover intervals!
     </div>
   )
+}
 
 export default IntervalLineDisplay

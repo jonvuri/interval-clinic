@@ -7,8 +7,9 @@ import IntervalLineDisplay from './components/IntervalLineDisplay'
 import IntervalSineWaveDisplay from './components/IntervalSineWaveDisplay'
 import IntervalStaffDisplay from './components/IntervalStaffDisplay'
 import Piano from './components/Piano'
+import TuningToggle from './components/TuningToggle'
 
-import intervals, { Interval } from './intervals'
+import intervals, { Interval, IntervalContext } from './intervals'
 import { getSynth } from './synth'
 
 // Store val locally - super dirty. Trying to diagnose hold-forever issues
@@ -16,15 +17,19 @@ let synth: PolySynth | null = null
 
 const App = () => {
   const [interval, setInterval] = useState<Interval | null>(null)
+  const [just, setJust] = useState<boolean>(false)
+
+  const currentIntervals = just ? intervals.just : intervals.twelve
 
   const handleAttack = async (interval: Interval) => {
     if (synth) {
-      synth.triggerAttack(intervals[interval].frequency)
+      console.log('attack', currentIntervals[interval].frequency)
+      synth.triggerAttack(currentIntervals[interval].frequency)
       setInterval(interval)
     } else {
       synth = await getSynth()
 
-      synth.triggerAttack(intervals[interval].frequency)
+      synth.triggerAttack(currentIntervals[interval].frequency)
       setInterval(interval)
     }
   }
@@ -33,18 +38,29 @@ const App = () => {
     if (synth) {
       // Send twice to try to fix issue where attack holds forever - seemingly due to double attack.
       // Hard to trigger.
-      synth.triggerRelease(intervals[interval].frequency)
-      synth.triggerRelease(intervals[interval].frequency)
+      synth.triggerRelease(currentIntervals[interval].frequency)
+      synth.triggerRelease(currentIntervals[interval].frequency)
     }
   }
 
+  const handleChangeJust = (just: boolean) => {
+    if (synth) {
+      synth.releaseAll()
+    }
+
+    setJust(just)
+  }
+
   return (
-    <div className={styles.app}>
-      <IntervalSineWaveDisplay interval={interval} />
-      <Piano onAttack={handleAttack} onRelease={handleRelease} />
-      <IntervalLineDisplay interval={interval} />
-      <IntervalStaffDisplay interval={interval} />
-    </div>
+    <IntervalContext.Provider value={currentIntervals}>
+      <div className={styles.app}>
+        <IntervalSineWaveDisplay interval={interval} />
+        <Piano onAttack={handleAttack} onRelease={handleRelease} />
+        <IntervalLineDisplay interval={interval} />
+        <TuningToggle just={just} onChange={handleChangeJust} />
+        <IntervalStaffDisplay interval={interval} />
+      </div>
+    </IntervalContext.Provider>
   )
 }
 
