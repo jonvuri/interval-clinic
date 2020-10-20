@@ -21,3 +21,10 @@
   margin-top: 8px;
   font-size: 200%;
 }
+
+.discoverHintLabel {
+  font-size: 200%;
+  margin-left: 26px;
+  margin-top: 60.4px;
+  opacity: 0.3;
+}

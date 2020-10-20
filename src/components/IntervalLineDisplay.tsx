@@ -70,6 +70,10 @@ const IntervalLineDisplay = ({ interval }: Props) =>
       </div>
       <div className={styles.intervalNameLabel}>{intervals[interval].name}</div>
     </div>
-  ) : null
+  ) : (
+    <div className={styles.discoverHintLabel}>
+      Play a note to discover intervals!
+    </div>
+  )
 
 export default IntervalLineDisplay
