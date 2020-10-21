@@ -4,6 +4,7 @@ import { PolySynth } from 'tone'
 import styles from './App.module.css'
 
 import IntervalLineDisplay from './components/IntervalLineDisplay'
+import IntervalRatioDisplay from './components/IntervalRatioDisplay'
 import IntervalSineWaveDisplay from './components/IntervalSineWaveDisplay'
 import IntervalStaffDisplay from './components/IntervalStaffDisplay'
 import Piano from './components/Piano'
@@ -55,6 +56,7 @@ const App = () => {
     <IntervalContext.Provider value={currentIntervals}>
       <div className={styles.app}>
         <IntervalSineWaveDisplay interval={interval} />
+        <IntervalRatioDisplay interval={interval} />
         <Piano onAttack={handleAttack} onRelease={handleRelease} />
         <IntervalLineDisplay interval={interval} />
         <TuningToggle just={just} onChange={handleChangeJust} />
