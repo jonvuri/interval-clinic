@@ -8,6 +8,7 @@ type KeyProps = {
   interval: Interval
   display: string
   keyboardKey: string
+  displayKeyboardKey: string
   onAttack: (interval: Interval) => void
   onRelease: (interval: Interval) => void
 }
@@ -21,6 +22,7 @@ const BaseKey = ({
   interval,
   display,
   keyboardKey,
+  displayKeyboardKey,
   onAttack,
   onRelease,
 }: BaseKeyProps) => {
@@ -57,7 +59,7 @@ const BaseKey = ({
 
   const handleKeyDown = useCallback(
     (event) => {
-      if (event.key === keyboardKey && !event.repeat) {
+      if (event.code === keyboardKey && !event.repeat) {
         onAttack(interval)
         setPressed(true)
       }
@@ -67,7 +69,7 @@ const BaseKey = ({
 
   const handleKeyUp = useCallback(
     (event) => {
-      if (event.key === keyboardKey && !event.repeat) {
+      if (event.code === keyboardKey && !event.repeat) {
         onRelease(interval)
         setPressed(false)
       }
@@ -159,7 +161,7 @@ const BaseKey = ({
           ></rect>
         </svg>
       </div>
-      <div className={styles.keyboardLabel}>{keyboardKey}</div>
+      <div className={styles.keyboardLabel}>{displayKeyboardKey}</div>
     </div>
   )
 }
@@ -168,14 +170,16 @@ const WhiteKey = ({
   interval,
   display,
   keyboardKey,
+  displayKeyboardKey,
   onAttack,
   onRelease,
 }: KeyProps) => (
   <BaseKey
     cssClassName={styles.whiteKey}
     interval={interval}
-    keyboardKey={keyboardKey}
     display={display}
+    keyboardKey={keyboardKey}
+    displayKeyboardKey={displayKeyboardKey}
     onAttack={onAttack}
     onRelease={onRelease}
   />
@@ -185,14 +189,16 @@ const BlackKey = ({
   interval,
   display,
   keyboardKey,
+  displayKeyboardKey,
   onAttack,
   onRelease,
 }: KeyProps) => (
   <BaseKey
     cssClassName={styles.blackKey}
     interval={interval}
-    keyboardKey={keyboardKey}
     display={display}
+    keyboardKey={keyboardKey}
+    displayKeyboardKey={displayKeyboardKey}
     onAttack={onAttack}
     onRelease={onRelease}
   />
@@ -209,91 +215,104 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       <WhiteKey
         interval="U"
         display="C4"
-        keyboardKey="q"
+        keyboardKey="KeyQ"
+        displayKeyboardKey="Q"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <BlackKey
         interval="m2"
         display="D♭"
-        keyboardKey="2"
+        keyboardKey="Digit2"
+        displayKeyboardKey="2"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
         interval="M2"
         display="D"
-        keyboardKey="w"
+        keyboardKey="KeyW"
+        displayKeyboardKey="W"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <BlackKey
         interval="m3"
         display="E♭"
-        keyboardKey="3"
+        keyboardKey="Digit3"
+        displayKeyboardKey="3"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
         interval="M3"
         display="E"
-        keyboardKey="e"
+        keyboardKey="KeyE"
+        displayKeyboardKey="E"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
         interval="P4"
         display="F"
-        keyboardKey="r"
+        keyboardKey="KeyR"
+        displayKeyboardKey="R"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <BlackKey
         interval="A4"
         display="G♭"
-        keyboardKey="5"
+        keyboardKey="Digit5"
+        displayKeyboardKey="5"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
         interval="P5"
         display="G"
-        keyboardKey="t"
+        keyboardKey="KeyT"
+        displayKeyboardKey="T"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <BlackKey
         interval="m6"
         display="A♭"
-        keyboardKey="6"
+        keyboardKey="Digit6"
+        displayKeyboardKey="6"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
         interval="M6"
         display="A"
-        keyboardKey="y"
+        keyboardKey="KeyY"
+        displayKeyboardKey="Y"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <BlackKey
         interval="m7"
         display="B♭"
-        keyboardKey="7"
+        keyboardKey="Digit7"
+        displayKeyboardKey="7"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
         interval="M7"
         display="B"
-        keyboardKey="u"
+        keyboardKey="KeyU"
+        displayKeyboardKey="U"
         onAttack={onAttack}
         onRelease={onRelease}
       />
       <WhiteKey
         interval="O"
         display="C5"
-        keyboardKey="i"
+        keyboardKey="KeyI"
+        displayKeyboardKey="I"
         onAttack={onAttack}
         onRelease={onRelease}
       />
