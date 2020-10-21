@@ -12,7 +12,7 @@ const IntervalSineWaveDisplay = ({ interval }: Props) => {
   const intervals = useContext(IntervalContext)
 
   if (interval === null) {
-    return null
+    return <div className={styles.container} />
   } else {
     const { upper, lower, color } = intervals[interval]
 
@@ -26,9 +26,17 @@ const IntervalSineWaveDisplay = ({ interval }: Props) => {
           <div className={styles.upper} style={{ width: `${lower * 100}px` }}>
             {Array.from(Array(upper), (_, i) =>
               i > 0 ? (
-                <div className={styles.tick} style={{ borderColor: color }} />
+                <div
+                  key={i}
+                  className={styles.tick}
+                  style={{ borderColor: color }}
+                />
               ) : (
-                <div className={styles.tick} style={{ borderColor: color }}>
+                <div
+                  key={i}
+                  className={styles.tick}
+                  style={{ borderColor: color }}
+                >
                   <span className={styles.tickLabel}>{upper}</span>
                 </div>
               )
@@ -37,9 +45,9 @@ const IntervalSineWaveDisplay = ({ interval }: Props) => {
           <div className={styles.lower} style={{ width: `${lower * 100}px` }}>
             {Array.from(Array(lower), (_, i) =>
               i > 0 ? (
-                <div className={styles.tick} />
+                <div key={i} className={styles.tick} />
               ) : (
-                <div className={styles.tick}>
+                <div key={i} className={styles.tick}>
                   <span className={styles.tickLabel}>{lower}</span>
                 </div>
               )

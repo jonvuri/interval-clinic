@@ -8,6 +8,8 @@ type Props = {
   interval: Interval | null
 }
 
+// SVG has 14:9 aspect ratio
+
 const intervalOverlay = (
   intervals: IntervalMap,
   interval: Interval | null

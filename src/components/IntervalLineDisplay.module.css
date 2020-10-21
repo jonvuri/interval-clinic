@@ -16,15 +16,9 @@
   font-size: 80%;
 }
 
-.intervalNameLabel {
-  margin-left: 26px;
-  margin-top: 8px;
-  font-size: 200%;
-}
-
 .discoverHintLabel {
   font-size: 200%;
   margin-left: 26px;
-  margin-top: 60.4px;
+  margin-top: 30px;
   opacity: 0.3;
 }

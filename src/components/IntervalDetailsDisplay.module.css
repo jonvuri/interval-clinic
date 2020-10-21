@@ -1,0 +1,11 @@
+.container {
+  display: block;
+}
+
+.tonicInfoLabel {
+  color: black;
+}
+
+.intervalInfoLabel {
+  display: block;
+}

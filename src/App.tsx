@@ -3,7 +3,9 @@ import { PolySynth } from 'tone'
 
 import styles from './App.module.css'
 
+import IntervalDetailsDisplay from './components/IntervalDetailsDisplay'
 import IntervalLineDisplay from './components/IntervalLineDisplay'
+import IntervalNameDisplay from './components/IntervalNameDisplay'
 import IntervalRatioDisplay from './components/IntervalRatioDisplay'
 import IntervalSineWaveDisplay from './components/IntervalSineWaveDisplay'
 import IntervalStaffDisplay from './components/IntervalStaffDisplay'
@@ -24,7 +26,6 @@ const App = () => {
 
   const handleAttack = async (interval: Interval) => {
     if (synth) {
-      console.log('attack', currentIntervals[interval].frequency)
       synth.triggerAttack(currentIntervals[interval].frequency)
       setInterval(interval)
     } else {
@@ -55,12 +56,22 @@ const App = () => {
   return (
     <IntervalContext.Provider value={currentIntervals}>
       <div className={styles.app}>
-        <IntervalSineWaveDisplay interval={interval} />
-        <IntervalRatioDisplay interval={interval} />
-        <Piano onAttack={handleAttack} onRelease={handleRelease} />
-        <IntervalLineDisplay interval={interval} />
-        <TuningToggle just={just} onChange={handleChangeJust} />
-        <IntervalStaffDisplay interval={interval} />
+        <div className={styles.wavePanel}>
+          <IntervalSineWaveDisplay interval={interval} />
+          <IntervalRatioDisplay interval={interval} />
+        </div>
+        <div className={styles.staffPanel}>
+          <IntervalStaffDisplay interval={interval} />
+          <IntervalNameDisplay interval={interval} />
+        </div>
+        <div className={styles.pianoPanel}>
+          <Piano onAttack={handleAttack} onRelease={handleRelease} />
+          <IntervalLineDisplay interval={interval} />
+        </div>
+        <div className={styles.detailsPanel}>
+          <IntervalDetailsDisplay interval={interval} />
+          <TuningToggle just={just} onChange={handleChangeJust} />
+        </div>
       </div>
     </IntervalContext.Provider>
   )

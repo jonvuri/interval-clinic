@@ -14,17 +14,6 @@ const IntervalSineWaveDisplay = ({ interval }: Props) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.tonicInfoLabel}>
-        &nbsp;C4&nbsp;&nbsp;{intervals['U'].frequency.toFixed(2)}Hz
-        {interval !== null && (
-          <span
-            className={styles.intervalInfoLabel}
-            style={{ color: intervals[interval].color }}
-          >
-            {intervals[interval].frequency.toFixed(2)}Hz
-          </span>
-        )}
-      </div>
       <div className={styles.backgroundContainer}>
         <SineRepeater cycles={64} width={100} height={50} />
       </div>

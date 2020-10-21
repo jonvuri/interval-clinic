@@ -11,4 +11,34 @@
     'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
     'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
     monospace;
+
+  display: grid;
+  grid-template-rows: min-content auto;
+  grid-template-columns: 320px auto 320px;
+  grid-template-areas:
+    'wave wave wave'
+    'staff piano details';
+}
+
+/* .panelGrid {
+} */
+
+.wavePanel {
+  grid-area: wave;
+  width: 100%;
+  overflow: hidden;
+}
+
+.staffPanel {
+  grid-area: staff;
+  padding-top: 19px;
+}
+
+.pianoPanel {
+  grid-area: piano;
+}
+
+.detailsPanel {
+  grid-area: details;
+  padding-top: 19px;
 }

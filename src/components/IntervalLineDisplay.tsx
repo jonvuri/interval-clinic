@@ -70,7 +70,6 @@ const IntervalLineDisplay = ({ interval }: Props) => {
       <div className={styles.semitonesLabel}>
         {numberOfSemitones(interval)} semitones
       </div>
-      <div className={styles.intervalNameLabel}>{intervals[interval].name}</div>
     </div>
   ) : (
     <div className={styles.discoverHintLabel}>

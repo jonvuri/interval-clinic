@@ -8,8 +8,10 @@
 }
 
 .keyLabel {
+  height: 19px;
   opacity: 0.4;
   text-align: center;
+  user-select: none;
 }
 
 .keyboardLabel {
@@ -24,6 +26,7 @@
   border: 1px solid #aaa;
   border-radius: 2px;
   border-radius: 2px;
+  user-select: none;
 }
 
 .keyPressed.whiteKey,
