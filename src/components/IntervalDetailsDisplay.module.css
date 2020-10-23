@@ -1,11 +1,80 @@
 .container {
-  display: block;
+  display: grid;
+  align-items: center;
+  text-align: right;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    'intervalNoteName . .'
+    'twelveLabel twelveHertz .'
+    'justLabel justHertz justRatio'
+    'tonicLabel tonicHertz tonicRatio'
+    'tonicNoteName . .';
 }
 
-.tonicInfoLabel {
+.container > * {
+  height: 22px;
+}
+
+.intervalNoteName {
+  grid-area: intervalNoteName;
+}
+
+.twelveLabel {
+  grid-area: twelveLabel;
+}
+
+.justLabel {
+  grid-area: justLabel;
+}
+
+.twelveHertz {
+  grid-area: twelveHertz;
+}
+
+.justHertz {
+  grid-area: justHertz;
+}
+
+.justRatio {
+  grid-area: justRatio;
+  display: flex;
+  justify-content: center;
+}
+
+.justRatioInner {
+  width: 26px;
+  height: 100%;
+  padding: 0 4px;
+  border-bottom: 1px solid;
+  text-align: center;
+}
+
+.tonicNoteName {
+  grid-area: tonicNoteName;
   color: black;
 }
 
-.intervalInfoLabel {
-  display: block;
+.tonicLabel {
+  grid-area: tonicLabel;
+  color: black;
+}
+
+.tonicHertz {
+  grid-area: tonicHertz;
+  color: black;
+}
+
+.tonicRatio {
+  grid-area: tonicRatio;
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
+.tonicRatioInner {
+  width: 26px;
+  height: 100%;
+  padding: 0 4px;
+  border-top: 1px solid;
+  text-align: center;
 }

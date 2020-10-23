@@ -214,7 +214,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
     <div className={styles.container}>
       <WhiteKey
         interval="U"
-        display="C4"
+        display="U"
         keyboardKey="KeyQ"
         displayKeyboardKey="Q"
         onAttack={onAttack}
@@ -222,7 +222,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <BlackKey
         interval="m2"
-        display="D♭"
+        display="m2"
         keyboardKey="Digit2"
         displayKeyboardKey="2"
         onAttack={onAttack}
@@ -230,7 +230,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <WhiteKey
         interval="M2"
-        display="D"
+        display="M2"
         keyboardKey="KeyW"
         displayKeyboardKey="W"
         onAttack={onAttack}
@@ -238,7 +238,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <BlackKey
         interval="m3"
-        display="E♭"
+        display="m3"
         keyboardKey="Digit3"
         displayKeyboardKey="3"
         onAttack={onAttack}
@@ -246,7 +246,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <WhiteKey
         interval="M3"
-        display="E"
+        display="M3"
         keyboardKey="KeyE"
         displayKeyboardKey="E"
         onAttack={onAttack}
@@ -254,7 +254,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <WhiteKey
         interval="P4"
-        display="F"
+        display="P4"
         keyboardKey="KeyR"
         displayKeyboardKey="R"
         onAttack={onAttack}
@@ -262,7 +262,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <BlackKey
         interval="A4"
-        display="G♭"
+        display="T"
         keyboardKey="Digit5"
         displayKeyboardKey="5"
         onAttack={onAttack}
@@ -270,7 +270,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <WhiteKey
         interval="P5"
-        display="G"
+        display="P5"
         keyboardKey="KeyT"
         displayKeyboardKey="T"
         onAttack={onAttack}
@@ -278,7 +278,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <BlackKey
         interval="m6"
-        display="A♭"
+        display="m6"
         keyboardKey="Digit6"
         displayKeyboardKey="6"
         onAttack={onAttack}
@@ -286,7 +286,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <WhiteKey
         interval="M6"
-        display="A"
+        display="M6"
         keyboardKey="KeyY"
         displayKeyboardKey="Y"
         onAttack={onAttack}
@@ -294,7 +294,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <BlackKey
         interval="m7"
-        display="B♭"
+        display="m7"
         keyboardKey="Digit7"
         displayKeyboardKey="7"
         onAttack={onAttack}
@@ -302,7 +302,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <WhiteKey
         interval="M7"
-        display="B"
+        display="M7"
         keyboardKey="KeyU"
         displayKeyboardKey="U"
         onAttack={onAttack}
@@ -310,7 +310,7 @@ const Piano = ({ onAttack, onRelease }: Props) => {
       />
       <WhiteKey
         interval="O"
-        display="C5"
+        display="O"
         keyboardKey="KeyI"
         displayKeyboardKey="I"
         onAttack={onAttack}

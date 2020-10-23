@@ -69,7 +69,7 @@ const App = () => {
           <IntervalLineDisplay interval={interval} />
         </div>
         <div className={styles.detailsPanel}>
-          <IntervalDetailsDisplay interval={interval} />
+          <IntervalDetailsDisplay interval={interval} just={just} />
           <TuningToggle just={just} onChange={handleChangeJust} />
         </div>
       </div>

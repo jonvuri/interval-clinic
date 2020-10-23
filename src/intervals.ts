@@ -9,6 +9,7 @@ const intervals = {
   twelve: {
     U: {
       name: 'Unison',
+      note: 'C4',
       frequency: TONIC,
       upper: 1,
       lower: 1,
@@ -16,6 +17,7 @@ const intervals = {
     },
     m2: {
       name: 'Minor 2nd',
+      note: 'D♭4',
       frequency: twelveTet(41),
       upper: 16,
       lower: 15,
@@ -23,6 +25,7 @@ const intervals = {
     },
     M2: {
       name: 'Major 2nd',
+      note: 'D4',
       frequency: twelveTet(42),
       upper: 9,
       lower: 8,
@@ -30,6 +33,7 @@ const intervals = {
     },
     m3: {
       name: 'Minor 3rd',
+      note: 'E♭4',
       frequency: twelveTet(43),
       upper: 6,
       lower: 5,
@@ -37,6 +41,7 @@ const intervals = {
     },
     M3: {
       name: 'Major 3rd',
+      note: 'E4',
       frequency: twelveTet(44),
       upper: 5,
       lower: 4,
@@ -44,6 +49,7 @@ const intervals = {
     },
     P4: {
       name: 'Perfect 4th',
+      note: 'F4',
       frequency: twelveTet(45),
       upper: 4,
       lower: 3,
@@ -51,6 +57,7 @@ const intervals = {
     },
     A4: {
       name: 'Tritone',
+      note: 'G♭4',
       frequency: twelveTet(46),
       upper: 45,
       lower: 32,
@@ -58,6 +65,7 @@ const intervals = {
     },
     P5: {
       name: 'Perfect 5th',
+      note: 'G4',
       frequency: twelveTet(47),
       upper: 3,
       lower: 2,
@@ -65,6 +73,7 @@ const intervals = {
     },
     m6: {
       name: 'Minor 6th',
+      note: 'A♭4',
       frequency: twelveTet(48),
       upper: 8,
       lower: 5,
@@ -72,6 +81,7 @@ const intervals = {
     },
     M6: {
       name: 'Major 6th',
+      note: 'A4',
       frequency: twelveTet(49),
       upper: 5,
       lower: 3,
@@ -79,6 +89,7 @@ const intervals = {
     },
     m7: {
       name: 'Minor 7th',
+      note: 'B♭4',
       frequency: twelveTet(50),
       upper: 9,
       lower: 5,
@@ -86,6 +97,7 @@ const intervals = {
     },
     M7: {
       name: 'Major 7th',
+      note: 'B4',
       frequency: twelveTet(51),
       upper: 15,
       lower: 8,
@@ -93,6 +105,7 @@ const intervals = {
     },
     O: {
       name: 'Octave',
+      note: 'C5',
       frequency: twelveTet(52),
       upper: 2,
       lower: 1,
@@ -102,6 +115,7 @@ const intervals = {
   just: {
     U: {
       name: 'Unison',
+      note: 'C4',
       frequency: TONIC,
       upper: 1,
       lower: 1,
@@ -109,6 +123,7 @@ const intervals = {
     },
     m2: {
       name: 'Minor 2nd',
+      note: 'D♭4',
       frequency: TONIC * (16 / 15),
       upper: 16,
       lower: 15,
@@ -116,6 +131,7 @@ const intervals = {
     },
     M2: {
       name: 'Major 2nd',
+      note: 'D4',
       frequency: TONIC * (9 / 8),
       upper: 9,
       lower: 8,
@@ -123,6 +139,7 @@ const intervals = {
     },
     m3: {
       name: 'Minor 3rd',
+      note: 'E♭4',
       frequency: TONIC * (6 / 5),
       upper: 6,
       lower: 5,
@@ -130,6 +147,7 @@ const intervals = {
     },
     M3: {
       name: 'Major 3rd',
+      note: 'E4',
       frequency: TONIC * (5 / 4),
       upper: 5,
       lower: 4,
@@ -137,6 +155,7 @@ const intervals = {
     },
     P4: {
       name: 'Perfect 4th',
+      note: 'F4',
       frequency: TONIC * (4 / 3),
       upper: 4,
       lower: 3,
@@ -144,6 +163,7 @@ const intervals = {
     },
     A4: {
       name: 'Tritone',
+      note: 'G♭4',
       frequency: TONIC * (45 / 32),
       upper: 45,
       lower: 32,
@@ -151,6 +171,7 @@ const intervals = {
     },
     P5: {
       name: 'Perfect 5th',
+      note: 'G4',
       frequency: TONIC * (3 / 2),
       upper: 3,
       lower: 2,
@@ -158,6 +179,7 @@ const intervals = {
     },
     m6: {
       name: 'Minor 6th',
+      note: 'A♭4',
       frequency: TONIC * (8 / 5),
       upper: 8,
       lower: 5,
@@ -165,6 +187,7 @@ const intervals = {
     },
     M6: {
       name: 'Major 6th',
+      note: 'A4',
       frequency: TONIC * (5 / 3),
       upper: 5,
       lower: 3,
@@ -172,6 +195,7 @@ const intervals = {
     },
     m7: {
       name: 'Minor 7th',
+      note: 'B♭4',
       frequency: TONIC * (9 / 5),
       upper: 9,
       lower: 5,
@@ -179,6 +203,7 @@ const intervals = {
     },
     M7: {
       name: 'Major 7th',
+      note: 'B4',
       frequency: TONIC * (15 / 8),
       upper: 15,
       lower: 8,
@@ -186,6 +211,7 @@ const intervals = {
     },
     O: {
       name: 'Octave',
+      note: 'C5',
       frequency: TONIC * 2,
       upper: 2,
       lower: 1,
