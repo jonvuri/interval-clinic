@@ -3,12 +3,12 @@ import { PolySynth } from 'tone'
 
 import styles from './App.module.css'
 
-import IntervalDetailsDisplay from './components/IntervalDetailsDisplay'
-import IntervalLineDisplay from './components/IntervalLineDisplay'
-import IntervalNameDisplay from './components/IntervalNameDisplay'
-import IntervalRatioDisplay from './components/IntervalRatioDisplay'
-import IntervalSineWaveDisplay from './components/IntervalSineWaveDisplay'
-import IntervalStaffDisplay from './components/IntervalStaffDisplay'
+import IntervalDetailsDisplay from './components/interval-displays/Details'
+import IntervalLineDisplay from './components/interval-displays/Line'
+import IntervalNameDisplay from './components/interval-displays/Name'
+import IntervalRatioDisplay from './components/interval-displays/Ratio'
+import IntervalSineWaveDisplay from './components/interval-displays/SineWave'
+import IntervalStaffDisplay from './components/interval-displays/Staff'
 import Piano from './components/Piano'
 import TuningToggle from './components/TuningToggle'
 

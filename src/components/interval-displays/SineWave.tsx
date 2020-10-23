@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 
-import { Interval, IntervalContext } from '../intervals'
-import SineRepeater from './SineRepeater'
+import { Interval, IntervalContext } from '../../intervals'
+import SineRepeater from '../SineRepeater'
 
-import styles from './IntervalSineWaveDisplay.module.css'
+import styles from './SineWave.module.css'
 
 type Props = {
   interval: Interval | null

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 
-import { Interval, IntervalContext } from '../intervals'
+import { Interval, IntervalContext } from '../../intervals'
 
-import styles from './IntervalNameDisplay.module.css'
+import styles from './Name.module.css'
 
 type Props = {
   interval: Interval | null
