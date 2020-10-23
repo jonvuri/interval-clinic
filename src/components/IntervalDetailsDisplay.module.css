@@ -51,24 +51,24 @@
 
 .tonicNoteName {
   grid-area: tonicNoteName;
-  color: black;
+  color: var(--light-base-color);
 }
 
 .tonicLabel {
   grid-area: tonicLabel;
-  color: black;
+  color: var(--light-base-color);
 }
 
 .tonicHertz {
   grid-area: tonicHertz;
-  color: black;
+  color: var(--light-base-color);
 }
 
 .tonicRatio {
   grid-area: tonicRatio;
   display: flex;
   justify-content: center;
-  color: black;
+  color: var(--light-base-color);
 }
 
 .tonicRatioInner {

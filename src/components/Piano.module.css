@@ -10,7 +10,7 @@
 
 .keyLabel {
   height: 19px;
-  opacity: 0.4;
+  color: var(--light-base-color);
   text-align: center;
   user-select: none;
 }
@@ -23,8 +23,8 @@
   justify-content: center;
   margin: 0.6em auto;
   padding: 10px;
-  opacity: 0.4;
-  border: 1px solid #aaa;
+  color: var(--light-base-color);
+  border: 1px solid var(--light-base-color);
   border-radius: 2px;
   border-radius: 2px;
   user-select: none;

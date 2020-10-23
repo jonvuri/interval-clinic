@@ -37,7 +37,9 @@ const IntervalSineWaveDisplay = ({ interval }: Props) => {
                   className={styles.tick}
                   style={{ borderColor: color }}
                 >
-                  <span className={styles.tickLabel}>{upper}</span>
+                  <span className={styles.tickLabel} style={{ color }}>
+                    {upper}
+                  </span>
                 </div>
               )
             )}

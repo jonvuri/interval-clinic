@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   height: 50px;
-  fill: black;
+  fill: var(--light-base-color);
 }
 
 .foregroundContainer {

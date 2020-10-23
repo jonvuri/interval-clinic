@@ -11,8 +11,8 @@
   left: 0;
   width: 280px;
   height: 180px;
-  stroke: #999;
-  fill: #999;
+  stroke: var(--light-base-color);
+  fill: var(--light-base-color);
 }
 
 .intervalOverlay {

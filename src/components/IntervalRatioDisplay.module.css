@@ -25,7 +25,7 @@
 
 .tickLabel {
   padding-left: 6px;
-  color: #aaa;
+  color: var(--light-base-color);
 }
 
 .upper > .tick {
@@ -36,8 +36,8 @@
 }
 
 .lower > .tick {
-  border-right: 2px solid black;
-  border-top: 2px solid black;
+  border-right: 2px solid var(--light-base-color);
+  border-top: 2px solid var(--light-base-color);
 }
 
 .spacing {
@@ -55,5 +55,5 @@
 .lowerSpacing {
   width: 1px;
   height: 18px;
-  border-top: 2px solid black;
+  border-top: 2px solid var(--light-base-color);
 }
