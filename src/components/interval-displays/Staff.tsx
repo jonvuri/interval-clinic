@@ -252,7 +252,7 @@ const intervalOverlay = (
   }
 }
 
-const IntervalStaffDisplay = ({ interval }: Props) => {
+const Staff = ({ interval }: Props) => {
   const intervals = useContext(IntervalContext)
 
   return (
@@ -345,4 +345,4 @@ const IntervalStaffDisplay = ({ interval }: Props) => {
   )
 }
 
-export default IntervalStaffDisplay
+export default Staff

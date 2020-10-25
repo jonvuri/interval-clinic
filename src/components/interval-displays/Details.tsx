@@ -9,7 +9,7 @@ type Props = {
   just: boolean
 }
 
-const IntervalDetailsDisplay = ({ interval, just }: Props) => (
+const Details = ({ interval, just }: Props) => (
   <div
     className={styles.container}
     style={interval !== null ? { color: intervals.twelve[interval].color } : {}}
@@ -69,4 +69,4 @@ const IntervalDetailsDisplay = ({ interval, just }: Props) => (
   </div>
 )
 
-export default IntervalDetailsDisplay
+export default Details

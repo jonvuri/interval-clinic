@@ -8,7 +8,7 @@ type Props = {
   interval: Interval | null
 }
 
-const IntervalSineWaveDisplay = ({ interval }: Props) => {
+const Ratio = ({ interval }: Props) => {
   const intervals = useContext(IntervalContext)
 
   if (interval === null) {
@@ -61,4 +61,4 @@ const IntervalSineWaveDisplay = ({ interval }: Props) => {
   }
 }
 
-export default IntervalSineWaveDisplay
+export default Ratio

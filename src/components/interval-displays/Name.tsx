@@ -8,7 +8,7 @@ type Props = {
   interval: Interval | null
 }
 
-const IntervalNameDisplay = ({ interval }: Props) => {
+const Name = ({ interval }: Props) => {
   const intervals = useContext(IntervalContext)
 
   return interval ? (
@@ -23,4 +23,4 @@ const IntervalNameDisplay = ({ interval }: Props) => {
   ) : null
 }
 
-export default IntervalNameDisplay
+export default Name

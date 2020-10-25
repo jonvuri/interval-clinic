@@ -40,7 +40,7 @@ const numberOfSemitones = (interval: Interval | null): number => {
   }
 }
 
-const IntervalLineDisplay = ({ interval }: Props) => {
+const Line = ({ interval }: Props) => {
   const intervals = useContext(IntervalContext)
 
   return interval ? (
@@ -78,4 +78,4 @@ const IntervalLineDisplay = ({ interval }: Props) => {
   )
 }
 
-export default IntervalLineDisplay
+export default Line
