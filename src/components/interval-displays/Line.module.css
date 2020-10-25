@@ -1,8 +1,9 @@
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 832px;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .lengthLine {
@@ -10,9 +11,14 @@
   height: 16px;
 }
 
+.semitonesLabelContainer {
+  position: absolute;
+}
+
 .semitonesLabel {
-  margin-left: 26px;
-  margin-top: 10px;
+  position: absolute;
+  right: 0;
+  width: max-content;
   font-size: 80%;
 }
 

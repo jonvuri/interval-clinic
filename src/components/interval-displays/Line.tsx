@@ -67,8 +67,10 @@ const Line = ({ interval }: Props) => {
           </React.Fragment>
         ))}
       </svg>
-      <div className={styles.semitonesLabel}>
-        {numberOfSemitones(interval)} semitones
+      <div className={styles.semitonesLabelContainer}>
+        <div className={styles.semitonesLabel}>
+          {numberOfSemitones(interval)} semitones
+        </div>
       </div>
     </div>
   ) : (
