@@ -10,6 +10,7 @@ import IntervalRatioDisplay from './components/interval-displays/Ratio'
 import IntervalSineWaveDisplay from './components/interval-displays/SineWave'
 import IntervalStaffDisplay from './components/interval-displays/Staff'
 import Piano from './components/Piano'
+import Switch from 'components/reference/Switch'
 import TuningToggle from './components/TuningToggle'
 
 import intervals, { Interval, IntervalContext } from './intervals'
@@ -71,6 +72,9 @@ const App = () => {
         <div className={styles.detailsPanel}>
           <IntervalDetailsDisplay interval={interval} just={just} />
           <TuningToggle just={just} onChange={handleChangeJust} />
+        </div>
+        <div className={styles.referencePanel}>
+          <Switch interval={interval} />
         </div>
       </div>
     </IntervalContext.Provider>
