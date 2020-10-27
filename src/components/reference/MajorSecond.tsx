@@ -147,7 +147,7 @@ const MajorSecond = Base('M2', {
     'Western Classical': [
       {
         artist: 'Johann Sebastian Bach',
-        title: 'Toccata and Fugue in D minor, BWV 565',
+        title: 'Toccata and Fugue in D minor',
         description: 'First two notes of the melody.',
         youtubeId: 'Nnuq9PXbywA',
         youtubeStart: 0,

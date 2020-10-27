@@ -121,7 +121,7 @@ const MinorThird = Base('m3', {
         title: 'Misty',
         description: 'First two notes of the melody.',
         youtubeId: 'AA2_6kS45E0',
-        youtubeStart: 0,
+        youtubeStart: 4,
       },
       {
         artist: 'Chick Corea',

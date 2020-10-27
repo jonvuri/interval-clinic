@@ -14,14 +14,14 @@ const MinorSecond = Base('m2', {
     Media: [
       {
         artist: 'John Williams',
-        title: 'Jaws Theme',
+        title: 'Theme from Jaws',
         description: 'First two notes of the theme.',
         youtubeId: 'lV8i-pSVMaQ',
         youtubeStart: 20,
       },
       {
         artist: 'Henry Manchin',
-        title: 'Pink Panther Theme',
+        title: 'Theme from The Pink Panther',
         description: 'First two notes of the theme.',
         youtubeId: 'HhHwnrlZRus',
         youtubeStart: 2,
@@ -59,7 +59,7 @@ const MinorSecond = Base('m2', {
     ],
     'Western Classical': [
       {
-        artist: 'Dvořák',
+        artist: 'Antonín Dvořák',
         title: 'New World Symphony, 4th Movement',
         description: 'First two notes of the melody.',
         youtubeId: '32_O-NwzFM0',
@@ -67,7 +67,7 @@ const MinorSecond = Base('m2', {
         youtubeNote: 'Performed by the Vienna Philharmonic orchestra',
       },
       {
-        artist: 'Handel',
+        artist: 'George Frideric Handel',
         title: "Lascia ch'io pianga",
         description: "First two notes of the melody: LASCIA CH'IO PIANGA...",
         youtubeId: 'EKo_EmfEPWs',
@@ -81,7 +81,7 @@ const MinorSecond = Base('m2', {
       {
         artist: 'Metallica',
         title: 'For Whom the Bell Tolls',
-        description: 'First two notes of lead guitar riff.',
+        description: 'First two notes of the lead guitar riff.',
         youtubeId: 'KO3l6qNA2Q4',
         youtubeStart: 9,
       },
@@ -101,10 +101,45 @@ const MinorSecond = Base('m2', {
         artist: 'Lewis Redner',
         title: 'O Little Town of Bethlehem (St. Louis version)',
         description:
-          'First two notes of vocal melody: O LITTLE TOWN of Bethlehem...',
+          'First two notes of the melody: O LITTLE TOWN of Bethlehem...',
         youtubeId: 'V9i-tS6moeE',
         youtubeStart: 14,
         youtubeNote: 'Performed by Nat King Cole',
+      },
+    ],
+    Jazz: [
+      {
+        artist: 'Miles Davis',
+        title: 'Solar',
+        description: 'First two notes of the melody.',
+        youtubeId: 'UBrKSKME3Zc',
+        youtubeStart: 0,
+      },
+      {
+        artist: 'Duke Ellington',
+        title: 'Sophisticated Lady',
+        description: 'First two notes of the melody.',
+        youtubeId: '8eM-5Gva46w',
+        youtubeStart: 0,
+        youtubeNote: 'Performed by Billy Childs and Christian McBride',
+      },
+      {
+        artist: 'Victor Young',
+        title: 'Stella by Starlight',
+        description: 'First two notes of the melody.',
+        youtubeId: 'go1pf6Z1sro',
+        youtubeStart: 0,
+        youtubeNote: 'Performed by Chet Baker',
+      },
+    ],
+    'Western Classical': [
+      {
+        artist: 'Wolfgang Amadeus Mozart',
+        title: 'Symphony No. 40, 1st Movement',
+        description: 'First two notes of the melody.',
+        youtubeId: 'BJPmYURJk4c',
+        youtubeStart: 6,
+        youtubeNote: 'Performed by the London Mozart Players',
       },
     ],
   },
