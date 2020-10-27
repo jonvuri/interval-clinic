@@ -20,9 +20,17 @@ const MajorThird = Base('M3', {
     ],
     Folk: [
       {
+        artist: 'Hugh Martin, Ralph Blane',
+        title: 'Have Yourself a Merry Little Christmas',
+        description: 'First two notes of the melody: HAVE YOURself...',
+        youtubeId: 'pvA7-EjaSPI',
+        youtubeStart: 0,
+        youtubeNote: 'Performed by Frank Sinatra',
+      },
+      {
         artist: '(Traditional)',
         title: 'When the Saints Go Marching In',
-        description: 'First two notes of the melody.',
+        description: 'First two notes of the melody: OH WHEN the saints...',
         youtubeId: 'wyLjbMBpGDA',
         youtubeStart: 21,
         youtubeNote: 'Performed by Louis Armstrong',

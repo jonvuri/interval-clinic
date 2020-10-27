@@ -53,7 +53,7 @@ const MinorThird = Base('m3', {
       },
       {
         artist: 'Paul Webster, Bob Harris',
-        title: 'Spiderman Theme',
+        title: 'Theme for Spiderman',
         description: 'First two notes of the melody: SPIDERman, Spiderman...',
         youtubeId: 'SUtziaZlDeE',
         youtubeStart: 10,
