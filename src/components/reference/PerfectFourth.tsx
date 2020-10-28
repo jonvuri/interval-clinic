@@ -96,7 +96,7 @@ const PerfectFourth = Base('P4', {
       {
         artist: '(Traditional)',
         title: "I've Been Working on the Railroad",
-        description: 'First two notes of the melody',
+        description: 'First two notes of the melody.',
         youtubeId: 'AAI6wjXEV6g',
         youtubeStart: 3,
       },
