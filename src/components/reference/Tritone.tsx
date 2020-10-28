@@ -14,7 +14,7 @@ const Tritone = Base('A4', {
     Media: [
       {
         artist: 'Danny Elfman',
-        title: 'Theme for The Simpsons',
+        title: 'The Simpsons Theme',
         description: 'First two notes of the vocal melody: THE SIMPsons...',
         youtubeId: 'aPzS3QYb868',
         youtubeStart: 11,

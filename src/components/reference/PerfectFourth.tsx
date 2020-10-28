@@ -104,14 +104,14 @@ const PerfectFourth = Base('P4', {
     Media: [
       {
         artist: 'Sheldon Allman',
-        title: 'Theme for George of the Jungle',
+        title: 'George of the Jungle Theme',
         description: 'First two notes of the melody: GEORGE, GEORGE...',
         youtubeId: 'EaXWy-HQefc',
         youtubeStart: 6,
       },
       {
         artist: 'Maurice Jarre',
-        title: 'Theme from Lawrence of Arabia',
+        title: 'Lawrence of Arabia Theme',
         description: 'First two notes of the melody.',
         youtubeId: 'LI2c3M9q9yI',
         youtubeStart: 6,

@@ -14,17 +14,18 @@ const MinorSecond = Base('m2', {
     Media: [
       {
         artist: 'John Williams',
-        title: 'Theme from Jaws',
+        title: 'Jaws Theme',
         description: 'First two notes of the theme.',
         youtubeId: 'lV8i-pSVMaQ',
         youtubeStart: 20,
       },
       {
         artist: 'Henry Manchin',
-        title: 'Theme from The Pink Panther',
+        title: 'The Pink Panther Theme',
         description: 'First two notes of the theme.',
-        youtubeId: 'HhHwnrlZRus',
-        youtubeStart: 2,
+        youtubeId: '3roQbeRyme4',
+        youtubeStart: 13,
+        youtubeNote: 'Performed by the Danish National Symphony Orchestra'
       },
     ],
     Folk: [
