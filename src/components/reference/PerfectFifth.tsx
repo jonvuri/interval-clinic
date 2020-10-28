@@ -85,14 +85,16 @@ const PerfectFifth = Base('P5', {
       {
         artist: 'Simple Minds',
         title: "Don't You (Forget About Me)",
-        description: "First two notes of the melody: DON'T YOU forget about me...",
+        description:
+          "First two notes of the melody: DON'T YOU forget about me...",
         youtubeId: 'CdqoNKCCt7A',
         youtubeStart: 54,
       },
       {
         artist: 'Morris Albert',
         title: 'Feelings',
-        description: 'First two notes of the melody: FEELINGS, nothing more than feelings...',
+        description:
+          'First two notes of the melody: FEELINGS, nothing more than feelings...',
         youtubeId: 'EbLBmru7BoM',
         youtubeStart: 8,
       },
@@ -101,7 +103,8 @@ const PerfectFifth = Base('P5', {
       {
         artist: 'Hoyt Curtin',
         title: 'The Flintstones Theme',
-        description: 'First two notes of the melody: FLINTSTONES, meet the Flintstones...',
+        description:
+          'First two notes of the melody: FLINTSTONES, meet the Flintstones...',
         youtubeId: 'uq7noaMwLfg',
         youtubeStart: 11,
       },
@@ -118,7 +121,8 @@ const PerfectFifth = Base('P5', {
       {
         artist: 'Richard Rodgers',
         title: 'Have You Met Miss Jones?',
-        description: 'First two notes of the melody: HAVE YOU met Miss Jones...',
+        description:
+          'First two notes of the melody: HAVE YOU met Miss Jones...',
         youtubeId: 'YYgAwJk73QI',
         youtubeStart: 9,
         youtubeNote: 'Performed by Robbie Williams',

@@ -25,7 +25,7 @@ const MinorSecond = Base('m2', {
         description: 'First two notes of the theme.',
         youtubeId: '3roQbeRyme4',
         youtubeStart: 13,
-        youtubeNote: 'Performed by the Danish National Symphony Orchestra'
+        youtubeNote: 'Performed by the Danish National Symphony Orchestra',
       },
     ],
     Folk: [
