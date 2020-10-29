@@ -73,7 +73,7 @@ const PerfectFourth = Base('P4', {
       {
         artist: 'Queen',
         title: 'Under Pressure',
-        description: 'First two notes of the bass line.',
+        description: 'First two notes of the bassline.',
         youtubeId: 'a01QQZyl-_I',
         youtubeStart: 6,
       },
