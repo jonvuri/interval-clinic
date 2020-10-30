@@ -12,7 +12,7 @@ import PerfectFifth from './PerfectFifth'
 import MinorSixth from './MinorSixth'
 import MajorSixth from './MajorSixth'
 import MinorSeventh from './MinorSeventh'
-import MajorSeventh from './MinorSecond'
+import MajorSeventh from './MajorSeventh'
 import Octave from './Octave'
 
 import styles from './Switch.module.css'

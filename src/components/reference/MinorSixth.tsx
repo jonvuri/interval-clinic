@@ -18,6 +18,16 @@ const MinorSixth = Base('m6', {
         youtubeStart: 57,
       },
     ],
+    Media: [
+      {
+        artist: 'Ramin Djawadi',
+        title: 'The Rains of Castamere from Game of Thrones',
+        description: 'First two notes of the melody.',
+        youtubeId: 'J73cZQzhPW0',
+        youtubeStart: 26,
+        youtubeNote: 'Performed by Tina Guo',
+      },
+    ],
     Jazz: [
       {
         artist: 'Scott Joplin',
