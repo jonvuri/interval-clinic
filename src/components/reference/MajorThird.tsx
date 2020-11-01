@@ -50,11 +50,11 @@ const MajorThird = Base('M3', {
     'Western Classical': [
       {
         artist: 'Antonio Vivaldi',
-        title: 'The Four Seasons - Spring',
+        title: 'Four Seasons - Spring',
         description: 'First two notes of the melody.',
-        youtubeId: 'e3nSvIiBNFo',
-        youtubeStart: 0,
-        youtubeNote: 'Performed by the Classical Concert Chamber Orchestra',
+        youtubeId: '3LiztfE1X7E',
+        youtubeStart: 2,
+        youtubeNote: 'Performed by Voices of Music',
       },
     ],
   },
@@ -80,11 +80,12 @@ const MajorThird = Base('M3', {
     ],
     Folk: [
       {
-        artist: 'Robert Robinson',
+        artist: 'Wallace Willis',
         title: 'Swing Low, Sweet Chariot',
         description: 'First two notes of the melody: SWING LOW...',
         youtubeId: 'VVKlw5fq83M',
-        youtubeStart: 11,
+        youtubeStart: 12,
+        youtubeNote: 'Performed by Robert Robinson',
       },
     ],
     Jazz: [
@@ -116,9 +117,9 @@ const MajorThird = Base('M3', {
         artist: 'Ludwig van Beethoven',
         title: 'Symphony No. 5 in C minor',
         description: 'First two notes of the melody.',
-        youtubeId: 'W2qW6fOtAMY',
-        youtubeStart: 0,
-        youtubeNote: 'Performed by the Tafelmusik Baroque orchestra',
+        youtubeId: 'kywprmOV5wc',
+        youtubeStart: 6,
+        youtubeNote: 'Performed by the Danish National Symphony Orchestra',
       },
     ],
   },

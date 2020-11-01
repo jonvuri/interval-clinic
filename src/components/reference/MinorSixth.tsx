@@ -35,6 +35,7 @@ const MinorSixth = Base('m6', {
         description: 'Third and fourth notes of the melody.',
         youtubeId: 'RCGGG9piAGY',
         youtubeStart: 20,
+        youtubeNote: 'Performed by Richard Smith',
       },
       {
         artist: 'Luiz Bonfá',
@@ -49,10 +50,9 @@ const MinorSixth = Base('m6', {
         artist: 'Wolfgang Amadeus Mozart',
         title: 'Lacrimosa',
         description: 'First two notes of the melody.',
-        youtubeId: 'BzsrqaLgdpk',
-        youtubeStart: 17,
-        youtubeNote:
-          'Performed by the RIAS Chamber Choir and the Berlin Radio Symphony Orchestra',
+        youtubeId: 'mhYCaQkbkyw',
+        youtubeStart: 11,
+        youtubeNote: 'Performed by the Lucerne Festival Orchestra',
       },
       {
         artist: 'Ludwig van Beethoven',
@@ -90,6 +90,7 @@ const MinorSixth = Base('m6', {
         description: 'First two notes of the melody: WHERE DO I begin...',
         youtubeId: 'ZxEazBfPVFg',
         youtubeStart: 21,
+        youtubeNote: 'Performed by Andy Williams',
       },
     ],
     Jazz: [
@@ -112,7 +113,7 @@ const MinorSixth = Base('m6', {
       {
         artist: 'Wolfgang Amadeus Mozart',
         title: 'Sei du Mein Trost',
-        description: 'First two notes of the melody: SEI DU...',
+        description: 'First two notes of the melody: SEI DU mein trost...',
         youtubeId: 'ZDCMMrfl6HY',
         youtubeStart: 1,
         youtubeNote: 'Performed by Roberta Alexander and Glen Wilson',

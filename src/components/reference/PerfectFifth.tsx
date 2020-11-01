@@ -23,16 +23,17 @@ const PerfectFifth = Base('P5', {
         artist: 'John Williams',
         title: 'Star Wars Theme',
         description: 'First two notes of the melody.',
-        youtubeId: 'FTiRrlgbYIM',
-        youtubeStart: 9,
-        youtubeNote: 'Performed by the Boston Pops Esplanade Orchestra',
+        youtubeId: 'j7pCf38yLak',
+        youtubeStart: 104,
+        youtubeNote: 'Performed by the Boston Pops Orchestra',
       },
       {
         artist: 'John Williams',
         title: 'Superman Theme',
         description: 'First two notes of the melody.',
-        youtubeId: '78N2SP6JFaI',
-        youtubeStart: 40,
+        youtubeId: 'EBatxZ90wag',
+        youtubeStart: 51,
+        youtubeNote: 'Performed by the BBC Concert Orchestra',
       },
     ],
     Folk: [
@@ -95,8 +96,8 @@ const PerfectFifth = Base('P5', {
         title: 'Feelings',
         description:
           'First two notes of the melody: FEELINGS, nothing more than feelings...',
-        youtubeId: 'EbLBmru7BoM',
-        youtubeStart: 8,
+        youtubeId: 'qq74cxIpMHY',
+        youtubeStart: 52,
       },
     ],
     Media: [
@@ -105,8 +106,9 @@ const PerfectFifth = Base('P5', {
         title: 'The Flintstones Theme',
         description:
           'First two notes of the melody: FLINTSTONES, meet the Flintstones...',
-        youtubeId: 'uq7noaMwLfg',
-        youtubeStart: 11,
+        youtubeId: 'W2XPi-uQHQY',
+        youtubeStart: 0,
+        youtubeNote: 'Performed by Herb Ellis and Ray Brown',
       },
     ],
     Jazz: [

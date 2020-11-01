@@ -27,10 +27,11 @@ const MajorSixth = Base('M6', {
     Media: [
       {
         artist: 'John Williams',
-        title: "Leia's Theme",
+        title: "Leia's Theme from Star Wars",
         description: 'First two notes of the melody.',
-        youtubeId: 'UtkuZbcZORE',
-        youtubeStart: 17,
+        youtubeId: 'WT1T6BwojXI',
+        youtubeStart: 200,
+        youtubeNote: 'Performed by the Danish National Symphony Orchestra',
       },
       {
         artist: '(Unknown)',
@@ -92,7 +93,8 @@ const MajorSixth = Base('M6', {
       {
         artist: '(Traditional)',
         title: "Nobody Knows the Trouble I've Seen",
-        description: 'First two notes of the melody: NOBOdy knows...',
+        description:
+          "First two notes of the melody: NOBOdy knows the trouble I've seen...",
         youtubeId: 'SVKKRzemX_w',
         youtubeStart: 12,
         youtubeNote: 'Performed by Louis Armstrong',

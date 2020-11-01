@@ -33,6 +33,7 @@ const MajorSeventh = Base('M7', {
           'From the first bass note, up to the top note of the first triad chord following it.',
         youtubeId: 'S-Xm7s9eGxU',
         youtubeStart: 0,
+        youtubeNote: 'Performed by Daniel Varsano and Philippe Entremont',
       },
     ],
   },
@@ -45,6 +46,7 @@ const MajorSeventh = Base('M7', {
           'Two descending notes near the end of the melody: AND HAVE YOURself...',
         youtubeId: 'pvA7-EjaSPI',
         youtubeStart: 109,
+        youtubeNote: 'Performed by Frank Sinatra',
       },
     ],
     Jazz: [

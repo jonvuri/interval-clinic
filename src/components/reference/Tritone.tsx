@@ -7,8 +7,8 @@ const Tritone = Base('A4', {
         artist: 'Jimi Hendrix',
         title: 'Purple Haze',
         description: 'First two notes of the guitar riff.',
-        youtubeId: 'WGoDaYjdfSg',
-        youtubeStart: 0,
+        youtubeId: 'zSsjtiky9xI',
+        youtubeStart: 8,
       },
     ],
     Media: [
