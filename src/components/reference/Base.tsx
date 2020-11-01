@@ -68,7 +68,7 @@ const Base = (interval: Interval, referenceMap: ReferenceMap) => {
             >
               🡥
             </div>
-            <div className={styles.headerText}>Ascending</div>
+            <div className={styles.headerText}>Ascending references</div>
           </div>
           <div className={styles.contents}>
             {Object.entries(referenceMap.ascending)
@@ -85,59 +85,6 @@ const Base = (interval: Interval, referenceMap: ReferenceMap) => {
                           role="button"
                           tabIndex={0}
                           key={song.youtubeId}
-                          onClick={handleClickSong(song)}
-                          onKeyPress={handleKeypress(song)}
-                        >
-                          <div className={styles.songInfo}>
-                            <div className={styles.songTitle}>{song.title}</div>
-                            <div className={styles.songArtist}>
-                              {song.artist}
-                            </div>
-                          </div>
-                          <div
-                            className={`${styles.playPauseButton}${
-                              selectedSong === song && playing
-                                ? ` ${styles.playing}`
-                                : ''
-                            }`}
-                          >
-                            <PlayPauseButton
-                              playing={selectedSong === song && playing}
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : null
-              )}
-          </div>
-        </div>
-        <div className={styles.descending}>
-          <div className={styles.header}>
-            <div
-              className={styles.headerIcon}
-              style={{ color: intervals[interval].color }}
-            >
-              🡦
-            </div>
-            <div className={styles.headerText}>Descending</div>
-          </div>
-          <div className={styles.contents}>
-            {Object.entries(referenceMap.descending)
-              .sort(([genreA], [genreB]) => SORT[genreA] - SORT[genreB])
-              .map(([genre, songs]) =>
-                songs ? (
-                  <div key={genre} className={styles.genre}>
-                    <div className={styles.genreLabel}>{genre}</div>
-
-                    <div className={styles.genreSongs}>
-                      {songs.map((song) => (
-                        <div
-                          className={styles.song}
-                          key={song.youtubeId}
-                          role="button"
-                          tabIndex={0}
                           onClick={handleClickSong(song)}
                           onKeyPress={handleKeypress(song)}
                         >
@@ -185,6 +132,59 @@ const Base = (interval: Interval, referenceMap: ReferenceMap) => {
               </div>
             </>
           )}
+        </div>
+        <div className={styles.descending}>
+          <div className={styles.header}>
+            <div
+              className={styles.headerIcon}
+              style={{ color: intervals[interval].color }}
+            >
+              🡦
+            </div>
+            <div className={styles.headerText}>Descending references</div>
+          </div>
+          <div className={styles.contents}>
+            {Object.entries(referenceMap.descending)
+              .sort(([genreA], [genreB]) => SORT[genreA] - SORT[genreB])
+              .map(([genre, songs]) =>
+                songs ? (
+                  <div key={genre} className={styles.genre}>
+                    <div className={styles.genreLabel}>{genre}</div>
+
+                    <div className={styles.genreSongs}>
+                      {songs.map((song) => (
+                        <div
+                          className={styles.song}
+                          key={song.youtubeId}
+                          role="button"
+                          tabIndex={0}
+                          onClick={handleClickSong(song)}
+                          onKeyPress={handleKeypress(song)}
+                        >
+                          <div className={styles.songInfo}>
+                            <div className={styles.songTitle}>{song.title}</div>
+                            <div className={styles.songArtist}>
+                              {song.artist}
+                            </div>
+                          </div>
+                          <div
+                            className={`${styles.playPauseButton}${
+                              selectedSong === song && playing
+                                ? ` ${styles.playing}`
+                                : ''
+                            }`}
+                          >
+                            <PlayPauseButton
+                              playing={selectedSong === song && playing}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null
+              )}
+          </div>
         </div>
       </div>
     )

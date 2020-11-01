@@ -27,8 +27,8 @@ const YoutubeEmbed = ({ song, onPlayerReady }: Props) => {
   useEffect(() => {
     if (iframeEl.current) {
       const player = YouTubePlayer('youtube-replace', {
-        width: '256',
-        height: '144',
+        width: '288',
+        height: '162',
         videoId: startingSong.youtubeId,
         playerVars: {
           autoplay: 1,
