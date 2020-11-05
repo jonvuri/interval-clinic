@@ -59,7 +59,7 @@ const App = () => {
       <div className={styles.app}>
         <div className={styles.wavePanel}>
           <IntervalSineWaveDisplay interval={interval} />
-          <IntervalRatioDisplay interval={interval} />
+          <IntervalRatioDisplay interval={interval} just={just} />
         </div>
         <div className={styles.staffPanel}>
           <IntervalStaffDisplay interval={interval} />
