@@ -15,7 +15,6 @@ const JustToggle = ({ just, onChange }: Props) => {
   }
 
   const handleJustClick = () => {
-    console.log('just click', just)
     if (!just) {
       onChange(true)
     }

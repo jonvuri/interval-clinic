@@ -1,10 +1,8 @@
 .container {
-  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  height: 38px;
-  margin: 24px 0 16px;
+  margin: 0 0 16px;
 }
 
 .innerContainer {
@@ -12,29 +10,42 @@
   max-width: 100%;
 }
 
+.header {
+  position: relative;
+  width: 100%;
+  margin: 6px 0 4px;
+}
+
 .upper,
 .lower {
   display: flex;
 }
 
+.infoLabel {
+  display: block;
+  width: 54px;
+  text-align: right;
+}
+
 .upperInfo {
   display: flex;
-  position: absolute;
-  bottom: 100%;
   height: 20px;
 }
 
-.lowerInfo {
+.tonicInfoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
+.tonicInfo {
   display: flex;
-  position: absolute;
-  top: 100%;
+  width: min-content;
   height: 20px;
+  margin: 0 auto;
   color: var(--light-base-color);
-}
-
-.infoNote {
-  width: 62px;
-  text-align: right;
 }
 
 .infoFrequency {
@@ -57,6 +68,11 @@
 .tickLabel {
   padding-left: 6px;
   color: var(--light-base-color);
+}
+
+.upper > .innerTick {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
 }
 
 .upper > .tick {

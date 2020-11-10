@@ -15,53 +15,43 @@ const Ratio = ({ interval, just }: Props) => {
   if (interval === null) {
     return <div className={styles.container} />
   } else {
-    const currentInterval = just
-      ? intervals.just[interval]
-      : intervals.twelve[interval]
-    const { upper, lower, color } = currentInterval
+    const twelveInterval = intervals.twelve[interval]
+    const justInterval = intervals.just[interval]
+    const { upper, lower, color } = justInterval
 
-    const twelveRatio =
-      intervals.twelve[interval].frequency / tonicInterval.frequency
+    const twelveRatio = twelveInterval.frequency / tonicInterval.frequency
     const twelveWidth = (100 / twelveRatio) * upper
+
+    const centsDiff =
+      1200 *
+      (Math.log(twelveInterval.frequency / justInterval.frequency) /
+        Math.log(2))
 
     return (
       <div className={styles.container}>
-        <div className={styles.upperInfo} style={{ color }}>
-          <div className={styles.infoNote}>{currentInterval.note}</div>
-          <div className={styles.infoFrequency}>
-            {currentInterval.frequency.toFixed(2)}Hz
+        <div className={styles.header}>
+          <div className={styles.tonicInfoContainer}>
+            <div className={styles.tonicInfo}>
+              <div className={styles.infoLabel}>Tonic</div>
+              <div className={styles.infoFrequency}>
+                {tonicInterval.frequency.toFixed(2)}Hz
+              </div>
+            </div>
+          </div>
+          <div
+            className={styles.upperInfo}
+            style={{ color, opacity: just ? 1 : 0.6 }}
+          >
+            <div className={styles.infoLabel}>Just</div>
+            <div className={styles.infoFrequency}>
+              {justInterval.frequency.toFixed(2)}Hz
+            </div>
           </div>
         </div>
-        <div className={styles.lowerInfo}>
-          <div className={styles.infoNote}>{tonicInterval.note}</div>
-          <div className={styles.infoFrequency}>
-            {tonicInterval.frequency.toFixed(2)}Hz
-          </div>
-        </div>
-        <div className={styles.tickContainer}>
-          <div className={styles.upper} style={{ width: `${twelveWidth}px` }}>
-            {Array.from(Array(upper), (_, i) =>
-              i > 0 ? (
-                <div
-                  key={i}
-                  className={styles.tick}
-                  style={{ borderColor: color }}
-                />
-              ) : (
-                <div
-                  key={i}
-                  className={styles.tick}
-                  style={{ borderColor: color }}
-                >
-                  <span className={styles.tickLabel} style={{ color }}>
-                    {upper}
-                  </span>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-        <div className={styles.innerContainer}>
+        <div
+          className={styles.innerContainer}
+          style={{ opacity: just ? 1 : 0.6 }}
+        >
           <div className={styles.spacing}>
             <div
               className={styles.upperSpacing}
@@ -102,6 +92,45 @@ const Ratio = ({ interval, just }: Props) => {
                 )
               )}
             </div>
+          </div>
+        </div>
+        <div className={styles.header}>
+          <div
+            className={styles.upperInfo}
+            style={{ color, opacity: just ? 0.6 : 1 }}
+          >
+            <div className={styles.infoLabel}>12TET</div>
+            <div className={styles.infoFrequency}>
+              {twelveInterval.frequency.toFixed(2)}Hz
+            </div>
+            {interval !== 'U' && (
+              <div className={styles.infoFrequency}>
+                ({centsDiff > 0 ? '+' : ''}
+                {centsDiff.toFixed(2)}¢)
+              </div>
+            )}
+          </div>
+        </div>
+        <div
+          className={styles.tickContainer}
+          style={{ opacity: just ? 0.6 : 1 }}
+        >
+          <div className={styles.upper} style={{ width: `${twelveWidth}px` }}>
+            {Array.from(Array(upper), (_, i) =>
+              i < upper - 1 ? (
+                <div
+                  key={i}
+                  className={styles.innerTick}
+                  style={{ borderColor: color }}
+                />
+              ) : (
+                <div
+                  key={i}
+                  className={styles.tick}
+                  style={{ borderColor: color }}
+                />
+              )
+            )}
           </div>
         </div>
       </div>
