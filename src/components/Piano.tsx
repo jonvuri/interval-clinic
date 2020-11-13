@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 
-import { Interval } from '../intervals'
+import { ActiveIntervals, Interval } from '../intervals'
 
 import styles from './Piano.module.css'
 
@@ -9,8 +9,11 @@ type KeyProps = {
   display: string
   keyboardKey: string
   displayKeyboardKey: string
+  activeIntervals: ActiveIntervals
+  samplerPlaying: boolean
   onAttack: (interval: Interval) => void
   onRelease: (interval: Interval) => void
+  onToggleInterval: (interval: Interval) => void
 }
 
 type BaseKeyProps = KeyProps & {
@@ -23,8 +26,11 @@ const BaseKey = ({
   display,
   keyboardKey,
   displayKeyboardKey,
+  activeIntervals,
+  samplerPlaying,
   onAttack,
   onRelease,
+  onToggleInterval,
 }: BaseKeyProps) => {
   const [pressed, setPressed] = useState(false)
 
@@ -87,9 +93,23 @@ const BaseKey = ({
     }
   })
 
+  const handleCheckboxChange = () => {
+    onToggleInterval(interval)
+  }
+
   return (
     <div className={styles.keyContainer}>
-      <div className={styles.keyLabel}>{display}</div>
+      <div className={styles.header}>
+        <div className={styles.keyLabel}>{display}</div>
+        <div className={styles.keyCheckbox}>
+          <input
+            type="checkbox"
+            disabled={samplerPlaying}
+            checked={activeIntervals[interval]}
+            onChange={handleCheckboxChange}
+          />
+        </div>
+      </div>
       <div
         role="button"
         tabIndex={0}
@@ -171,8 +191,11 @@ const WhiteKey = ({
   display,
   keyboardKey,
   displayKeyboardKey,
+  activeIntervals,
+  samplerPlaying,
   onAttack,
   onRelease,
+  onToggleInterval,
 }: KeyProps) => (
   <BaseKey
     cssClassName={styles.whiteKey}
@@ -180,8 +203,11 @@ const WhiteKey = ({
     display={display}
     keyboardKey={keyboardKey}
     displayKeyboardKey={displayKeyboardKey}
+    activeIntervals={activeIntervals}
+    samplerPlaying={samplerPlaying}
     onAttack={onAttack}
     onRelease={onRelease}
+    onToggleInterval={onToggleInterval}
   />
 )
 
@@ -190,8 +216,11 @@ const BlackKey = ({
   display,
   keyboardKey,
   displayKeyboardKey,
+  activeIntervals,
+  samplerPlaying,
   onAttack,
   onRelease,
+  onToggleInterval,
 }: KeyProps) => (
   <BaseKey
     cssClassName={styles.blackKey}
@@ -199,17 +228,29 @@ const BlackKey = ({
     display={display}
     keyboardKey={keyboardKey}
     displayKeyboardKey={displayKeyboardKey}
+    activeIntervals={activeIntervals}
+    samplerPlaying={samplerPlaying}
     onAttack={onAttack}
     onRelease={onRelease}
+    onToggleInterval={onToggleInterval}
   />
 )
 
 type Props = {
+  activeIntervals: ActiveIntervals
+  samplerPlaying: boolean
   onAttack: (interval: Interval) => void
   onRelease: (interval: Interval) => void
+  onToggleInterval: (interval: Interval) => void
 }
 
-const Piano = ({ onAttack, onRelease }: Props) => {
+const Piano = ({
+  activeIntervals,
+  samplerPlaying,
+  onAttack,
+  onRelease,
+  onToggleInterval,
+}: Props) => {
   return (
     <div className={styles.container}>
       <WhiteKey
@@ -217,104 +258,143 @@ const Piano = ({ onAttack, onRelease }: Props) => {
         display="U"
         keyboardKey="KeyQ"
         displayKeyboardKey="Q"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <BlackKey
         interval="m2"
         display="m2"
         keyboardKey="Digit2"
         displayKeyboardKey="2"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <WhiteKey
         interval="M2"
         display="M2"
         keyboardKey="KeyW"
         displayKeyboardKey="W"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <BlackKey
         interval="m3"
         display="m3"
         keyboardKey="Digit3"
         displayKeyboardKey="3"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <WhiteKey
         interval="M3"
         display="M3"
         keyboardKey="KeyE"
         displayKeyboardKey="E"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <WhiteKey
         interval="P4"
         display="P4"
         keyboardKey="KeyR"
         displayKeyboardKey="R"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <BlackKey
         interval="A4"
         display="T"
         keyboardKey="Digit5"
         displayKeyboardKey="5"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <WhiteKey
         interval="P5"
         display="P5"
         keyboardKey="KeyT"
         displayKeyboardKey="T"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <BlackKey
         interval="m6"
         display="m6"
         keyboardKey="Digit6"
         displayKeyboardKey="6"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <WhiteKey
         interval="M6"
         display="M6"
         keyboardKey="KeyY"
         displayKeyboardKey="Y"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <BlackKey
         interval="m7"
         display="m7"
         keyboardKey="Digit7"
         displayKeyboardKey="7"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <WhiteKey
         interval="M7"
         display="M7"
         keyboardKey="KeyU"
         displayKeyboardKey="U"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
       <WhiteKey
         interval="O"
         display="O"
         keyboardKey="KeyI"
         displayKeyboardKey="I"
+        activeIntervals={activeIntervals}
+        samplerPlaying={samplerPlaying}
         onAttack={onAttack}
         onRelease={onRelease}
+        onToggleInterval={onToggleInterval}
       />
     </div>
   )

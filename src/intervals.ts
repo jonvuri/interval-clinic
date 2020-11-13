@@ -223,6 +223,10 @@ const intervals = {
 export type Interval = keyof typeof intervals.twelve
 export type IntervalMap = typeof intervals.twelve
 
+export type ActiveIntervals = {
+  [key in Interval]: boolean
+}
+
 export const IntervalContext = createContext(intervals.twelve)
 
 export default intervals

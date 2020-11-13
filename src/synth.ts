@@ -1,14 +1,21 @@
 import * as Tone from 'tone'
 
-let synth: Tone.PolySynth | null = null
+import { Interval } from './intervals'
 
-export const getSynth = async () => {
+export type ToneStuff = {
+  synth: Tone.PolySynth
+  announceInterval: (interval: Interval) => void
+}
+
+let toneStuff: ToneStuff | null = null
+
+export const getToneStuff = async () => {
   await Tone.start()
 
-  if (synth) {
-    return synth
+  if (toneStuff) {
+    return toneStuff
   } else {
-    synth = new Tone.PolySynth().toDestination()
+    const synth = new Tone.PolySynth().toDestination()
 
     synth.set({
       volume: 0,
@@ -33,6 +40,72 @@ export const getSynth = async () => {
       },
     })
 
-    return synth
+    const unison = new Tone.Player('/unison.mp3').toDestination()
+    const minorSecond = new Tone.Player('/minor-second.mp3').toDestination()
+    const majorSecond = new Tone.Player('/major-second.mp3').toDestination()
+    const minorThird = new Tone.Player('/minor-third.mp3').toDestination()
+    const majorThird = new Tone.Player('/major-third.mp3').toDestination()
+    const perfectFourth = new Tone.Player('/perfect-fourth.mp3').toDestination()
+    const tritone = new Tone.Player('/tritone.mp3').toDestination()
+    const perfectFifth = new Tone.Player('/perfect-fifth.mp3').toDestination()
+    const minorSixth = new Tone.Player('/minor-sixth.mp3').toDestination()
+    const majorSixth = new Tone.Player('/major-sixth.mp3').toDestination()
+    const minorSeventh = new Tone.Player('/minor-seventh.mp3').toDestination()
+    const majorSeventh = new Tone.Player('/major-seventh.mp3').toDestination()
+    const octave = new Tone.Player('/octave.mp3').toDestination()
+
+    const announceInterval = (interval: Interval) => {
+      switch (interval) {
+        case 'U':
+          unison.start()
+          return
+        case 'm2':
+          minorSecond.start()
+          return
+        case 'M2':
+          majorSecond.start()
+          return
+        case 'm3':
+          minorThird.start()
+          return
+        case 'M3':
+          majorThird.start()
+          return
+        case 'P4':
+          perfectFourth.start()
+          return
+        case 'A4':
+          tritone.start()
+          return
+        case 'P5':
+          perfectFifth.start()
+          return
+        case 'm6':
+          minorSixth.start()
+          return
+        case 'M6':
+          majorSixth.start()
+          return
+        case 'm7':
+          minorSeventh.start()
+          return
+        case 'M7':
+          majorSeventh.start()
+          return
+        case 'O':
+          octave.start()
+          return
+        case null:
+        default:
+          return
+      }
+    }
+
+    toneStuff = {
+      synth,
+      announceInterval,
+    }
+
+    return toneStuff
   }
 }
