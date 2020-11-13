@@ -116,22 +116,22 @@ const Base = (interval: Interval, referenceMap: ReferenceMap) => {
         </div>
         <div className={styles.player}>
           {selectedSong && (
-            <>
-              <div className={styles.youtubeContainer}>
-                <YoutubeEmbed
-                  song={selectedSong}
-                  onPlayerReady={handlePlayerReady}
-                />
+            <div className={styles.playerInnerContainer}>
+              <div className={styles.description}>
+                {selectedSong.description}
               </div>
               {selectedSong.youtubeNote && (
                 <div className={styles.youtubeNote}>
                   {selectedSong.youtubeNote}
                 </div>
               )}
-              <div className={styles.description}>
-                {selectedSong.description}
+              <div className={styles.youtubeContainer}>
+                <YoutubeEmbed
+                  song={selectedSong}
+                  onPlayerReady={handlePlayerReady}
+                />
               </div>
-            </>
+            </div>
           )}
         </div>
         <div className={styles.descending}>

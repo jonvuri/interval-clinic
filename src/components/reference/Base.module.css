@@ -115,11 +115,20 @@
 
 .player {
   grid-area: player;
+  position: relative;
   width: 288px;
   margin: 28px 12px 0 12px;
 }
 
+.playerInnerContainer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .youtubeContainer {
+  height: 162px;
   display: flex;
   flex-direction: column;
 }
@@ -130,5 +139,5 @@
 }
 
 .description {
-  margin-top: 12px;
+  margin-bottom: 10px;
 }
