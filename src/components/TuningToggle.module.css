@@ -1,9 +1,29 @@
 .container {
-  position: relative;
-  width: 129px;
+  width: 200px;
   height: 97px;
   margin: 0 auto;
   user-select: none;
+}
+
+.innerContainer {
+  position: relative;
+  width: 129px;
+  height: 97px;
+  margin-left: auto;
+  opacity: 0.6;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.innerContainer:hover {
+  opacity: 1;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: -14px;
+  font-size: 125%;
+  color: #ccc;
 }
 
 .twelveContainer {
@@ -13,6 +33,12 @@
   width: 72px;
   height: 63px;
   fill: transparent;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+
+.twelveContainer:hover {
+  transform: scale(1.05);
 }
 
 .justContainer {
@@ -22,6 +48,12 @@
   width: 72px;
   height: 63px;
   fill: transparent;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+
+.justContainer:hover {
+  transform: scale(1.05);
 }
 
 .inner {

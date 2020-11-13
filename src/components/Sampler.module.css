@@ -55,6 +55,7 @@
 
 .playButton {
   margin: 16px auto 0;
+  border-radius: 2px;
   width: 200px;
   height: 40px;
   display: flex;
@@ -67,6 +68,7 @@
 
 .playButtonPlaying {
   margin: 16px auto 0;
+  border-radius: 2px;
   width: 200px;
   height: 40px;
   display: flex;
