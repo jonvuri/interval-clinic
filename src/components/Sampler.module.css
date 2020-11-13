@@ -1,3 +1,84 @@
 .container {
   display: block;
 }
+
+.steps {
+  display: flex;
+  justify-content: center;
+  transition: color ease-in-out 0.2s;
+}
+
+.disabledStepIcon {
+  color: white;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  font-size: 200%;
+  opacity: 0.1;
+  transition: opacity ease-in-out 0.2s;
+}
+
+.inactiveStepIcon {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  font-size: 200%;
+  opacity: 0.4;
+  transition: opacity ease-in-out 0.2s;
+}
+
+.activeStepIcon {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  font-size: 200%;
+  opacity: 1;
+  transition: opacity ease-in-out 0.2s;
+}
+
+.stepCheckboxes {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.stepCheckbox {
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  filter: grayscale(1);
+}
+
+.stepCheckbox > input:disabled {
+  opacity: 0.5;
+}
+
+.playButton {
+  margin: 16px auto 0;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
+  opacity: 0.4;
+  transition: all 0.2s ease-in-out;
+}
+
+.playButtonPlaying {
+  margin: 16px auto 0;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.playButton:hover,
+.playButtonPlaying:hover {
+  filter: brightness(1.5);
+  transition: all 0.2s ease-in-out;
+}

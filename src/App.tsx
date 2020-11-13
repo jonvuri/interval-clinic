@@ -112,6 +112,7 @@ const App = () => {
           <TuningToggle just={just} onChange={handleChangeJust} />
           <Sampler
             activeIntervals={activeIntervals}
+            interval={interval}
             samplerPlaying={samplerPlaying}
             setInterval={setInterval}
             setSamplerPlaying={setSamplerPlaying}

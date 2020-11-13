@@ -28,6 +28,10 @@
   filter: grayscale(1);
 }
 
+.keyCheckbox > input:disabled {
+  opacity: 0.5;
+}
+
 .keyboardLabel {
   width: 14px;
   height: 14px;

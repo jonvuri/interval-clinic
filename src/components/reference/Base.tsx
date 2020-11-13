@@ -3,8 +3,9 @@ import { YouTubePlayer } from 'youtube-player/dist/types'
 
 import { Interval, IntervalContext } from '../../intervals'
 
+import PlayPauseButton from '../PlayPauseButton'
+
 import { SORT, ReferenceSong, ReferenceMap } from './types'
-import PlayPauseButton from './PlayPauseButton'
 import YoutubeEmbed from './YoutubeEmbed'
 
 import styles from './Base.module.css'
