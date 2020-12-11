@@ -15,7 +15,7 @@ const MinorSixth = Base('m6', {
         title: 'Without Me',
         description: 'First two notes of the saxophone riff.',
         youtubeId: 'YVkUvmDQ3HY',
-        youtubeStart: 57,
+        youtubeStart: 56,
       },
     ],
     Media: [

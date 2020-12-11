@@ -224,7 +224,12 @@ const Sampler = ({
       toneStuff = await getToneStuff()
     }
 
-    setSamplerPlaying(!samplerPlaying)
+    if (samplerPlaying) {
+      setSamplerPlaying(false)
+      setStep(0)
+    } else {
+      setSamplerPlaying(true)
+    }
   }
 
   const handleKeypress = (event: KeyboardEvent<HTMLDivElement>) => {
