@@ -7,6 +7,7 @@ import IntervalNameDisplay from './components/interval-displays/Name'
 import IntervalRatioDisplay from './components/interval-displays/Ratio'
 import IntervalSineWaveDisplay from './components/interval-displays/SineWave'
 import IntervalStaffDisplay from './components/interval-displays/Staff'
+import DetailsSpacer from './components/DetailsSpacer'
 import Switch from './components/reference/Switch'
 import Piano from './components/Piano'
 import Sampler from './components/Sampler'
@@ -109,14 +110,17 @@ const App = () => {
           <IntervalLineDisplay interval={interval} />
         </div>
         <div className={styles.detailsPanel}>
-          <TuningToggle just={just} onChange={handleChangeJust} />
-          <Sampler
-            activeIntervals={activeIntervals}
-            interval={interval}
-            samplerPlaying={samplerPlaying}
-            setInterval={setInterval}
-            setSamplerPlaying={setSamplerPlaying}
-          />
+          <DetailsSpacer />
+          <div className={styles.detailsInner}>
+            <TuningToggle just={just} onChange={handleChangeJust} />
+            <Sampler
+              activeIntervals={activeIntervals}
+              interval={interval}
+              samplerPlaying={samplerPlaying}
+              setInterval={setInterval}
+              setSamplerPlaying={setSamplerPlaying}
+            />
+          </div>
         </div>
         <div className={styles.referencePanel}>
           <Switch interval={interval} />

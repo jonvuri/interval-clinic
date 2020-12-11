@@ -51,7 +51,10 @@
 .detailsPanel {
   grid-area: details;
   height: 259px;
-  padding-top: 19px;
+  display: flex;
+}
+
+.detailsInner {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
