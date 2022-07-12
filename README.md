@@ -1,9 +1,8 @@
-![Screenshot][docs/screenshot.png]
+![Screenshot](docs/screenshot.png)
 
 # Interval Clinic
 
 A single-page web app for exploring and training your ear to hear essential musical intervals in the common Western scale of 12-tone equal temperament.
-
 
 ## Scripts
 
